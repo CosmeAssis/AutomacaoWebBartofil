@@ -1,19 +1,19 @@
 *** Settings ***
-Resource          ../resource.robot
+Resource          ../Resource.robot
 
 *** Variables ***
-${browser}           chrome
-${url}                https://mcstaging.bartofil.com.br/
+${BROWSER}            headlesschrome
+${URL_BARTOFIL}                https://mcstaging.bartofil.com.br/
 
 *** Keywords ***
 
 Abrir o navegador
-    Open Browser   browser=${browser}
-    Maximize Browser Window
+    Open BROWSER   BROWSER=${BROWSER}
+    Maximize BROWSER Window
 
 Abrir Navegador no Celular
-    Open Browser   browser=${browser}
+    Open BROWSER   BROWSER=${BROWSER}
     Set Window Size    430    932
 
 Fechar o navegador
-    Close Browser
+    Close BROWSER
