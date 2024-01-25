@@ -35,3 +35,8 @@ E preencher com uma senha incorreta
 
 Então mensagem informando que Login e Senha é inválido é exibida
     Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    timeout=10s
+
+E realizo o login com sucesso
+    Quando clicar em Olá! Entre ou cadastra-se
+    E preencher login e senha
+    E clicar em Entrar

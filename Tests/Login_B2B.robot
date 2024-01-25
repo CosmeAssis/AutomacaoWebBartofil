@@ -7,7 +7,6 @@ Test Setup       Abrir o navegador
 ##Execução após execução do teste
 Test Teardown    Fechar o navegador
 
-# robot -N "LoginComSucesso" -d ./Results/ Tests/LoginTests.robot
 *** Test Cases ***
 
 CN0001-Realizar login com sucesso no site do parceiro Bartofil

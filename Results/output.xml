@@ -1,586 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20240124 20:52:32.221" rpa="false" schemaversion="3">
-<suite id="s1" name="Tests" source="C:\Users\bianc\OneDrive\Área de Trabalho\Bartofil\RegressãoStagingBartofil\Tests">
-<suite id="s1-s1" name="Login B2B" source="C:\Users\bianc\OneDrive\Área de Trabalho\Bartofil\RegressãoStagingBartofil\Tests\Login_B2B.robot">
-<test id="s1-s1-t1" name="CN0001-Realizar login com sucesso no site do parceiro Bartofil" line="13">
-<kw name="Abrir o navegador" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-01-25T01:57:51.967318" rpa="false" schemaversion="5">
+<suite id="s1" name="Venda B2B" source="/Users/macbook/AutomacaoWebBartofil/Tests/Venda_B2B.robot">
+<test id="s1-t1" name="CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado" line="12">
+<kw name="Abrir o navegador" owner="OpenBrowser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:52.178633" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:52:32.467" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:52:32.467" endtime="20240124 20:52:33.914"/>
+<status status="PASS" start="2024-01-25T01:57:52.178271" elapsed="2.422555"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240124 20:52:33.914" endtime="20240124 20:52:34.040"/>
+<status status="PASS" start="2024-01-25T01:57:54.602233" elapsed="0.426889"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:32.466" endtime="20240124 20:52:34.041"/>
+<status status="PASS" start="2024-01-25T01:57:52.177283" elapsed="2.852317"/>
 </kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
+<kw name="Dado que acesso o site do parceiro Bartofil" owner="HomePage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:55.031830" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
+<arg>${URL_BARTOFIL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:52:34.041" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:52:34.041" endtime="20240124 20:52:36.013"/>
+<status status="PASS" start="2024-01-25T01:57:55.031490" elapsed="1.411608"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_IMAGE_STORELOGO}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:36.013" endtime="20240124 20:52:36.099"/>
+<status status="PASS" start="2024-01-25T01:57:56.443528" elapsed="0.468240"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:34.041" endtime="20240124 20:52:36.099"/>
+<status status="PASS" start="2024-01-25T01:57:55.030779" elapsed="1.881287"/>
 </kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
+<kw name="E realizo o login com sucesso" owner="HomePage">
+<kw name="Quando clicar em Olá! Entre ou cadastra-se" owner="HomePage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:56.915417" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
+<arg>${HOME_LINK_CUSTOMERLOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:36.101" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:52:36.100" endtime="20240124 20:52:36.180"/>
+<status status="PASS" start="2024-01-25T01:57:56.914622" elapsed="1.025433"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_MODALTITLE_JASOUCLIENTE}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:36.180" endtime="20240124 20:52:36.439"/>
+<status status="PASS" start="2024-01-25T01:57:57.940391" elapsed="0.317489"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:36.100" endtime="20240124 20:52:36.440"/>
+<status status="PASS" start="2024-01-25T01:57:56.913814" elapsed="1.344291"/>
 </kw>
-<kw name="E preencher login e senha" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_Aprovada}</arg>
+<kw name="E preencher login e senha" owner="HomePage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:58.259338" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
+<arg>${HOME_INPUT_USERNAME}</arg>
+<arg>${CNPJ_EMPRESA_APROVADA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:36.440" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:52:36.440" endtime="20240124 20:52:36.561"/>
+<status status="PASS" start="2024-01-25T01:57:58.258819" elapsed="0.590216"/>
 </kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password}</arg>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:58.849704" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
+<msg time="2024-01-25T01:57:59.072944" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${HOME_INPUT_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:36.562" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:52:36.598" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:52:36.637" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:52:36.561" endtime="20240124 20:52:36.637"/>
+<status status="PASS" start="2024-01-25T01:57:58.849318" elapsed="0.437190"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:36.440" endtime="20240124 20:52:36.638"/>
+<status status="PASS" start="2024-01-25T01:57:58.258411" elapsed="1.028277"/>
 </kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
+<kw name="E clicar em Entrar" owner="HomePage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-25T01:57:59.289483" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
+<arg>${HOME_BUTTON_LOGIN}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:36.639" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:52:36.639" endtime="20240124 20:52:36.714"/>
+<status status="PASS" start="2024-01-25T01:57:59.287609" elapsed="0.172257"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:36.638" endtime="20240124 20:52:36.714"/>
+<status status="PASS" start="2024-01-25T01:57:59.286953" elapsed="0.173180"/>
 </kw>
-<kw name="Então o Minha Conta será exibido no header" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_HEADER_MINHACONTA}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:36.715" endtime="20240124 20:52:39.684"/>
+<status status="PASS" start="2024-01-25T01:57:56.912820" elapsed="2.547585"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:36.715" endtime="20240124 20:52:39.684"/>
+<kw name="Quando pesquisar o produto com SKU">
+<msg time="2024-01-25T01:57:59.464368" level="FAIL">No keyword with name 'Quando pesquisar o produto com SKU' found.</msg>
+<status status="FAIL" start="2024-01-25T01:57:59.464266" elapsed="0.000194">No keyword with name 'Quando pesquisar o produto com SKU' found.</status>
 </kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
+<kw name="E adicionar o produto no carrinho">
+<status status="NOT RUN" start="2024-01-25T01:57:59.467229" elapsed="0.000068"/>
+</kw>
+<kw name="E selecionar o metodo de pagamento como Boleto Antecipado">
+<status status="NOT RUN" start="2024-01-25T01:57:59.469765" elapsed="0.000075"/>
+</kw>
+<kw name="E verificar o desconto de 3 porcento">
+<status status="NOT RUN" start="2024-01-25T01:57:59.472029" elapsed="0.000050"/>
+</kw>
+<kw name="E clicar em Vender">
+<status status="NOT RUN" start="2024-01-25T01:57:59.474776" elapsed="0.000114"/>
+</kw>
+<kw name="Entao mensagem de venda realizada com sucesso é exibida">
+<status status="NOT RUN" start="2024-01-25T01:57:59.477343" elapsed="0.000076"/>
+</kw>
+<kw name="Fechar o navegador" owner="OpenBrowser" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:52:39.685" endtime="20240124 20:52:41.796"/>
+<status status="PASS" start="2024-01-25T01:57:59.478421" elapsed="0.334105"/>
 </kw>
-<status status="PASS" starttime="20240124 20:52:39.685" endtime="20240124 20:52:41.796"/>
+<status status="PASS" start="2024-01-25T01:57:59.478040" elapsed="0.334839"/>
 </kw>
-<tag>login_sucesso</tag>
-<status status="PASS" starttime="20240124 20:52:32.466" endtime="20240124 20:52:41.797"/>
+<status status="FAIL" start="2024-01-25T01:57:52.176229" elapsed="7.637003">No keyword with name 'Quando pesquisar o produto com SKU' found.</status>
 </test>
-<test id="s1-s1-t2" name="CN0002-Realizar login com conta em aprovação" line="21">
-<kw name="Abrir o navegador" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:52:41.798" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:52:41.798" endtime="20240124 20:52:42.857"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240124 20:52:42.857" endtime="20240124 20:52:42.970"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:41.798" endtime="20240124 20:52:42.970"/>
-</kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:52:42.971" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:52:42.971" endtime="20240124 20:52:43.967"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:43.967" endtime="20240124 20:52:44.332"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:42.971" endtime="20240124 20:52:44.332"/>
-</kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:44.332" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:52:44.332" endtime="20240124 20:52:44.702"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:44.702" endtime="20240124 20:52:44.953"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:44.332" endtime="20240124 20:52:44.953"/>
-</kw>
-<kw name="E preencher login e senha de uma conta em aprovação" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_EmAprovacao}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:44.954" level="INFO">Typing text '21483062000171' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:52:44.954" endtime="20240124 20:52:45.044"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:45.044" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:52:45.073" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:52:45.108" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:52:45.044" endtime="20240124 20:52:45.108"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:44.954" endtime="20240124 20:52:45.108"/>
-</kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:45.109" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:52:45.108" endtime="20240124 20:52:45.192"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:45.108" endtime="20240124 20:52:45.192"/>
-</kw>
-<kw name="Então mensagem que a conta ainda não foi aprovada é exibida" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_MESSAGE_CONTANAOAPROVADA}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:45.192" endtime="20240124 20:52:46.487"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:45.192" endtime="20240124 20:52:46.487"/>
-</kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:52:46.487" endtime="20240124 20:52:48.591"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:46.487" endtime="20240124 20:52:48.591"/>
-</kw>
-<tag>login_conta_emaprovacao</tag>
-<status status="PASS" starttime="20240124 20:52:41.798" endtime="20240124 20:52:48.592"/>
-</test>
-<test id="s1-s1-t3" name="CN0003-Realizar login com senha incorreta" line="29">
-<kw name="Abrir o navegador" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:52:48.595" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:52:48.595" endtime="20240124 20:52:49.591"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240124 20:52:49.592" endtime="20240124 20:52:49.707"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:48.595" endtime="20240124 20:52:49.707"/>
-</kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:52:49.708" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:52:49.708" endtime="20240124 20:52:51.155"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:51.155" endtime="20240124 20:52:51.178"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:49.707" endtime="20240124 20:52:51.178"/>
-</kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:51.179" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:52:51.179" endtime="20240124 20:52:51.277"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:52:51.278" endtime="20240124 20:52:51.543"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:51.179" endtime="20240124 20:52:51.543"/>
-</kw>
-<kw name="E preencher com uma senha incorreta" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_Aprovada}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:51.544" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:52:51.543" endtime="20240124 20:52:51.660"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password_Invalido}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:51.661" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:52:51.696" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:52:51.739" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:52:51.660" endtime="20240124 20:52:51.739"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:51.543" endtime="20240124 20:52:51.740"/>
-</kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:52:51.741" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:52:51.740" endtime="20240124 20:52:51.813"/>
-</kw>
-<status status="PASS" starttime="20240124 20:52:51.740" endtime="20240124 20:52:51.813"/>
-</kw>
-<kw name="Então mensagem informando que Login e Senha é inválido é exibida" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_MESSAGE_LOGINSENHAINVALIDO}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240124 20:53:02.168" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240124 20:53:02.169" level="FAIL">Element '(//diva[contains(.,'Login ou senha inválida.')])[9]' not visible after 10 seconds.</msg>
-<status status="FAIL" starttime="20240124 20:52:51.814" endtime="20240124 20:53:02.195"/>
-</kw>
-<status status="FAIL" starttime="20240124 20:52:51.814" endtime="20240124 20:53:02.195"/>
-</kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:53:02.196" endtime="20240124 20:53:04.330"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:02.196" endtime="20240124 20:53:04.330"/>
-</kw>
-<tag>login_senha_incorreta</tag>
-<status status="FAIL" starttime="20240124 20:52:48.595" endtime="20240124 20:53:04.331">Element '(//diva[contains(.,'Login ou senha inválida.')])[9]' not visible after 10 seconds.</status>
-</test>
-<status status="FAIL" starttime="20240124 20:52:32.243" endtime="20240124 20:53:04.333"/>
-</suite>
-<suite id="s1-s2" name="Login B2B Mobile" source="C:\Users\bianc\OneDrive\Área de Trabalho\Bartofil\RegressãoStagingBartofil\Tests\Login_B2B_Mobile.robot">
-<test id="s1-s2-t1" name="CN0001-Realizar login com sucesso no site do parceiro Bartofil" line="13">
-<kw name="Abrir Navegador no Celular" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:53:04.342" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:53:04.341" endtime="20240124 20:53:05.383"/>
-</kw>
-<kw name="Set Window Size" library="SeleniumLibrary">
-<arg>430</arg>
-<arg>932</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20240124 20:53:05.383" endtime="20240124 20:53:05.497"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:04.341" endtime="20240124 20:53:05.497"/>
-</kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:53:05.498" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:53:05.498" endtime="20240124 20:53:07.045"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:07.045" endtime="20240124 20:53:07.074"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:05.498" endtime="20240124 20:53:07.074"/>
-</kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:07.075" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:53:07.075" endtime="20240124 20:53:07.166"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:07.166" endtime="20240124 20:53:07.207"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:07.075" endtime="20240124 20:53:07.207"/>
-</kw>
-<kw name="E preencher login e senha" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_Aprovada}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:07.207" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:53:07.207" endtime="20240124 20:53:07.333"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:07.333" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:53:07.372" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:53:07.446" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:53:07.333" endtime="20240124 20:53:07.446"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:07.207" endtime="20240124 20:53:07.446"/>
-</kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:07.447" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:53:07.446" endtime="20240124 20:53:07.538"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:07.446" endtime="20240124 20:53:07.538"/>
-</kw>
-<kw name="Então o Minha Conta será exibido no header" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_HEADER_MINHACONTA}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:07.539" endtime="20240124 20:53:10.900"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:07.539" endtime="20240124 20:53:10.901"/>
-</kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:53:10.901" endtime="20240124 20:53:13.020"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:10.901" endtime="20240124 20:53:13.020"/>
-</kw>
-<tag>login_sucesso_mobile</tag>
-<status status="PASS" starttime="20240124 20:53:04.340" endtime="20240124 20:53:13.021"/>
-</test>
-<test id="s1-s2-t2" name="CN0002-Realizar login com conta em aprovação" line="21">
-<kw name="Abrir Navegador no Celular" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:53:13.023" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:53:13.023" endtime="20240124 20:53:14.000"/>
-</kw>
-<kw name="Set Window Size" library="SeleniumLibrary">
-<arg>430</arg>
-<arg>932</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20240124 20:53:14.001" endtime="20240124 20:53:14.114"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:13.023" endtime="20240124 20:53:14.114"/>
-</kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:53:14.115" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:53:14.115" endtime="20240124 20:53:15.524"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:15.524" endtime="20240124 20:53:15.546"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:14.115" endtime="20240124 20:53:15.546"/>
-</kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:15.547" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:53:15.546" endtime="20240124 20:53:15.625"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:15.625" endtime="20240124 20:53:15.676"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:15.546" endtime="20240124 20:53:15.676"/>
-</kw>
-<kw name="E preencher login e senha de uma conta em aprovação" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_EmAprovacao}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:15.677" level="INFO">Typing text '21483062000171' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:53:15.677" endtime="20240124 20:53:15.803"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:15.804" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:53:15.856" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:53:15.937" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:53:15.803" endtime="20240124 20:53:15.937"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:15.677" endtime="20240124 20:53:15.937"/>
-</kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:15.938" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:53:15.938" endtime="20240124 20:53:16.012"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:15.938" endtime="20240124 20:53:16.012"/>
-</kw>
-<kw name="Então mensagem que a conta ainda não foi aprovada é exibida" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_MESSAGE_CONTANAOAPROVADA}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:16.012" endtime="20240124 20:53:16.668"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:16.012" endtime="20240124 20:53:16.668"/>
-</kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:53:16.669" endtime="20240124 20:53:18.794"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:16.669" endtime="20240124 20:53:18.794"/>
-</kw>
-<tag>login_conta_emaprovacao_mobile</tag>
-<status status="PASS" starttime="20240124 20:53:13.022" endtime="20240124 20:53:18.795"/>
-</test>
-<test id="s1-s2-t3" name="CN0003-Realizar login com senha incorreta" line="29">
-<kw name="Abrir Navegador no Celular" library="OpenBrowser" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240124 20:53:18.797" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20240124 20:53:18.797" endtime="20240124 20:53:19.794"/>
-</kw>
-<kw name="Set Window Size" library="SeleniumLibrary">
-<arg>430</arg>
-<arg>932</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" starttime="20240124 20:53:19.794" endtime="20240124 20:53:19.907"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:18.797" endtime="20240124 20:53:19.907"/>
-</kw>
-<kw name="Dado que acesso o site do parceiro Bartofil" library="HomePage">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240124 20:53:19.908" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
-<status status="PASS" starttime="20240124 20:53:19.908" endtime="20240124 20:53:21.258"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${StoreLogo}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:21.258" endtime="20240124 20:53:21.280"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:19.908" endtime="20240124 20:53:21.280"/>
-</kw>
-<kw name="Quando clicar em Olá! Entre ou cadastra-se" library="HomePage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LinkCustomerLogin}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:21.281" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
-<status status="PASS" starttime="20240124 20:53:21.280" endtime="20240124 20:53:21.382"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${ModalJaSouCliente}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240124 20:53:21.382" endtime="20240124 20:53:21.431"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:21.280" endtime="20240124 20:53:21.432"/>
-</kw>
-<kw name="E preencher com uma senha incorreta" library="HomePage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${InputUsernameLogin}</arg>
-<arg>${CNPJ_Empresa_Aprovada}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:21.433" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
-<status status="PASS" starttime="20240124 20:53:21.432" endtime="20240124 20:53:21.557"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${InputPasswordLogin}</arg>
-<arg>${Password_Invalido}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:21.558" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg timestamp="20240124 20:53:21.605" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20240124 20:53:21.676" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20240124 20:53:21.557" endtime="20240124 20:53:21.677"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:21.432" endtime="20240124 20:53:21.677"/>
-</kw>
-<kw name="E clicar em Entrar" library="HomePage">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${ButtonLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240124 20:53:21.678" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
-<status status="PASS" starttime="20240124 20:53:21.677" endtime="20240124 20:53:21.760"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:21.677" endtime="20240124 20:53:21.760"/>
-</kw>
-<kw name="Então mensagem informando que Login e Senha é inválido é exibida" library="HomePage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${HOME_MESSAGE_LOGINSENHAINVALIDO}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20240124 20:53:31.932" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240124 20:53:31.932" level="FAIL">Element '(//diva[contains(.,'Login ou senha inválida.')])[9]' not visible after 10 seconds.</msg>
-<status status="FAIL" starttime="20240124 20:53:21.760" endtime="20240124 20:53:31.933"/>
-</kw>
-<status status="FAIL" starttime="20240124 20:53:21.760" endtime="20240124 20:53:31.933"/>
-</kw>
-<kw name="Fechar o navegador" library="OpenBrowser" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240124 20:53:31.934" endtime="20240124 20:53:34.057"/>
-</kw>
-<status status="PASS" starttime="20240124 20:53:31.933" endtime="20240124 20:53:34.057"/>
-</kw>
-<tag>login_senha_incorreta_mobile</tag>
-<status status="FAIL" starttime="20240124 20:53:18.796" endtime="20240124 20:53:34.058">Element '(//diva[contains(.,'Login ou senha inválida.')])[9]' not visible after 10 seconds.</status>
-</test>
-<status status="FAIL" starttime="20240124 20:53:04.335" endtime="20240124 20:53:34.060"/>
-</suite>
-<status status="FAIL" starttime="20240124 20:52:32.223" endtime="20240124 20:53:34.062"/>
+<status status="FAIL" start="2024-01-25T01:57:51.969287" elapsed="7.845485"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">login_conta_emaprovacao</stat>
-<stat pass="1" fail="0" skip="0">login_conta_emaprovacao_mobile</stat>
-<stat pass="0" fail="1" skip="0">login_senha_incorreta</stat>
-<stat pass="0" fail="1" skip="0">login_senha_incorreta_mobile</stat>
-<stat pass="1" fail="0" skip="0">login_sucesso</stat>
-<stat pass="1" fail="0" skip="0">login_sucesso_mobile</stat>
 </tag>
 <suite>
-<stat pass="4" fail="2" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s1" name="Login B2B">Tests.Login B2B</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s2" name="Login B2B Mobile">Tests.Login B2B Mobile</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Venda B2B">Venda B2B</stat>
 </suite>
 </statistics>
 <errors>
