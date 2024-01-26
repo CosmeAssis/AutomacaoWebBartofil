@@ -9,6 +9,3 @@ HOME_MESSAGE_CONTANAOAPROVADA: //div[@class='message message-error error'][conta
 HOME_MESSAGE_LOGINSENHAINVALIDO: (//div[contains(.,'Login ou senha inválida.')])[9]
 HOME_INPUT_BUSCAPRODUTO: //input[@name='q']
 HOME_GRID_RESULTADOPRODUTO: //img[contains(@class,'ProductImage-sc-r6p7z fITroU')]
-HOME_IMAGE_PDP: //img[contains(@class,'fotorama__img')]
-HOME_PAGETITLE_PRODUTO: //span[contains(@class,'base')]
-HOME_SKU: (//div[contains(@itemprop,'sku')])[2]

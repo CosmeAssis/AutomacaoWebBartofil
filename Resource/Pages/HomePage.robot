@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
+Resource    ../Pages/PdpPage.robot
 Variables   ../Locators/Home_Locators.yml
 Variables   ../Data/Login.yml
 
@@ -47,5 +48,3 @@ Quando pesquisar o produto com SKU ${SKU}
     Wait Until Element Is Visible    ${HOME_GRID_RESULTADOPRODUTO}
     Sleep    3s
     Click Element    ${HOME_GRID_RESULTADOPRODUTO}
-    Wait Until Element Is Visible  ${HOME_IMAGE_PDP}
-    Wait Until Element Is Visible    ${HOME_SKU}
