@@ -1,109 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-01-25T01:57:51.967318" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-01-26T00:20:24.049173" rpa="false" schemaversion="5">
 <suite id="s1" name="Venda B2B" source="/Users/macbook/AutomacaoWebBartofil/Tests/Venda_B2B.robot">
-<test id="s1-t1" name="CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado" line="12">
+<test id="s1-t1" name="CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado" line="14">
 <kw name="Abrir o navegador" owner="OpenBrowser" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:52.178633" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-01-26T00:20:24.253486" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-01-25T01:57:52.178271" elapsed="2.422555"/>
+<status status="PASS" start="2024-01-26T00:20:24.253145" elapsed="2.007424"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-01-25T01:57:54.602233" elapsed="0.426889"/>
+<status status="PASS" start="2024-01-26T00:20:26.264498" elapsed="0.422394"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:52.177283" elapsed="2.852317"/>
+<status status="PASS" start="2024-01-26T00:20:24.252204" elapsed="2.435235"/>
 </kw>
 <kw name="Dado que acesso o site do parceiro Bartofil" owner="HomePage">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:55.031830" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
+<msg time="2024-01-26T00:20:26.689730" level="INFO">Opening url 'https://mcstaging.bartofil.com.br/'</msg>
 <arg>${URL_BARTOFIL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-01-25T01:57:55.031490" elapsed="1.411608"/>
+<status status="PASS" start="2024-01-26T00:20:26.689367" elapsed="1.360367"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${HOME_IMAGE_STORELOGO}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-01-25T01:57:56.443528" elapsed="0.468240"/>
+<status status="PASS" start="2024-01-26T00:20:28.050005" elapsed="0.641609"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:55.030779" elapsed="1.881287"/>
+<status status="PASS" start="2024-01-26T00:20:26.688624" elapsed="2.003235"/>
 </kw>
 <kw name="E realizo o login com sucesso" owner="HomePage">
 <kw name="Quando clicar em Olá! Entre ou cadastra-se" owner="HomePage">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:56.915417" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
+<msg time="2024-01-26T00:20:28.694365" level="INFO">Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.</msg>
 <arg>${HOME_LINK_CUSTOMERLOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-01-25T01:57:56.914622" elapsed="1.025433"/>
+<status status="PASS" start="2024-01-26T00:20:28.693937" elapsed="1.200736"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${HOME_MODALTITLE_JASOUCLIENTE}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-01-25T01:57:57.940391" elapsed="0.317489"/>
+<status status="PASS" start="2024-01-26T00:20:29.895301" elapsed="0.563115"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:56.913814" elapsed="1.344291"/>
+<status status="PASS" start="2024-01-26T00:20:28.693362" elapsed="1.765644"/>
 </kw>
 <kw name="E preencher login e senha" owner="HomePage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:58.259338" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
+<msg time="2024-01-26T00:20:30.462805" level="INFO">Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.</msg>
 <arg>${HOME_INPUT_USERNAME}</arg>
 <arg>${CNPJ_EMPRESA_APROVADA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-01-25T01:57:58.258819" elapsed="0.590216"/>
+<status status="PASS" start="2024-01-26T00:20:30.462303" elapsed="0.441785"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:58.849704" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
-<msg time="2024-01-25T01:57:59.072944" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-01-26T00:20:30.904914" level="INFO">Typing password into text field '//input[contains(@title,'Senha')]'.</msg>
+<msg time="2024-01-26T00:20:30.950520" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${HOME_INPUT_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-01-25T01:57:58.849318" elapsed="0.437190"/>
+<status status="PASS" start="2024-01-26T00:20:30.904433" elapsed="0.117380"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:58.258411" elapsed="1.028277"/>
+<status status="PASS" start="2024-01-26T00:20:30.459687" elapsed="0.562420"/>
 </kw>
 <kw name="E clicar em Entrar" owner="HomePage">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-01-25T01:57:59.289483" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
+<msg time="2024-01-26T00:20:31.023133" level="INFO">Clicking button '//button[@class='action login primary']'.</msg>
 <arg>${HOME_BUTTON_LOGIN}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-01-25T01:57:59.287609" elapsed="0.172257"/>
+<status status="PASS" start="2024-01-26T00:20:31.022864" elapsed="0.131368"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:59.286953" elapsed="0.173180"/>
+<status status="PASS" start="2024-01-26T00:20:31.022475" elapsed="0.132014"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:56.912820" elapsed="2.547585"/>
+<kw name="Então o Minha Conta será exibido no header" owner="HomePage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_HEADER_MINHACONTA}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-26T00:20:31.155373" elapsed="2.069921"/>
 </kw>
-<kw name="Quando pesquisar o produto com SKU">
-<msg time="2024-01-25T01:57:59.464368" level="FAIL">No keyword with name 'Quando pesquisar o produto com SKU' found.</msg>
-<status status="FAIL" start="2024-01-25T01:57:59.464266" elapsed="0.000194">No keyword with name 'Quando pesquisar o produto com SKU' found.</status>
+<status status="PASS" start="2024-01-26T00:20:31.154893" elapsed="2.070744"/>
+</kw>
+<status status="PASS" start="2024-01-26T00:20:28.692632" elapsed="4.533164"/>
+</kw>
+<kw name="Quando pesquisar o produto com SKU 108384" owner="HomePage" source_name="Quando pesquisar o produto com SKU ${SKU}">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-26T00:20:33.227267" level="INFO">Typing text '108384' into text field '//input[@name='q']'.</msg>
+<arg>${HOME_INPUT_BUSCAPRODUTO}</arg>
+<arg>${SKU}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-26T00:20:33.226952" elapsed="1.226585"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_GRID_RESULTADOPRODUTO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-26T00:20:34.453837" elapsed="1.412982"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-26T00:20:38.869400" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-26T00:20:35.867550" elapsed="3.002110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-26T00:20:38.871071" level="INFO">Clicking element '//img[contains(@class,'ProductImage-sc-r6p7z fITroU')]'.</msg>
+<arg>${HOME_GRID_RESULTADOPRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-26T00:20:38.870294" elapsed="2.528680"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_IMAGE_PDP}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-26T00:20:41.399340" elapsed="1.129218"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HOME_SKU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-26T00:20:42.528816" elapsed="0.026387"/>
+</kw>
+<status status="PASS" start="2024-01-26T00:20:33.226468" elapsed="9.328893"/>
 </kw>
 <kw name="E adicionar o produto no carrinho">
-<status status="NOT RUN" start="2024-01-25T01:57:59.467229" elapsed="0.000068"/>
+<msg time="2024-01-26T00:20:42.558836" level="FAIL">No keyword with name 'E adicionar o produto no carrinho' found.</msg>
+<status status="FAIL" start="2024-01-26T00:20:42.558724" elapsed="0.000212">No keyword with name 'E adicionar o produto no carrinho' found.</status>
 </kw>
 <kw name="E selecionar o metodo de pagamento como Boleto Antecipado">
-<status status="NOT RUN" start="2024-01-25T01:57:59.469765" elapsed="0.000075"/>
+<status status="NOT RUN" start="2024-01-26T00:20:42.560781" elapsed="0.000053"/>
 </kw>
 <kw name="E verificar o desconto de 3 porcento">
-<status status="NOT RUN" start="2024-01-25T01:57:59.472029" elapsed="0.000050"/>
+<status status="NOT RUN" start="2024-01-26T00:20:42.562826" elapsed="0.000050"/>
 </kw>
 <kw name="E clicar em Vender">
-<status status="NOT RUN" start="2024-01-25T01:57:59.474776" elapsed="0.000114"/>
+<status status="NOT RUN" start="2024-01-26T00:20:42.565407" elapsed="0.000076"/>
 </kw>
 <kw name="Entao mensagem de venda realizada com sucesso é exibida">
-<status status="NOT RUN" start="2024-01-25T01:57:59.477343" elapsed="0.000076"/>
+<status status="NOT RUN" start="2024-01-26T00:20:42.567248" elapsed="0.000049"/>
 </kw>
 <kw name="Fechar o navegador" owner="OpenBrowser" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-01-25T01:57:59.478421" elapsed="0.334105"/>
+<status status="PASS" start="2024-01-26T00:20:42.571494" elapsed="0.379976"/>
 </kw>
-<status status="PASS" start="2024-01-25T01:57:59.478040" elapsed="0.334839"/>
+<status status="PASS" start="2024-01-26T00:20:42.567804" elapsed="0.383872"/>
 </kw>
-<status status="FAIL" start="2024-01-25T01:57:52.176229" elapsed="7.637003">No keyword with name 'Quando pesquisar o produto com SKU' found.</status>
+<status status="FAIL" start="2024-01-26T00:20:24.251286" elapsed="18.700598">No keyword with name 'E adicionar o produto no carrinho' found.</status>
 </test>
-<status status="FAIL" start="2024-01-25T01:57:51.969287" elapsed="7.845485"/>
+<doc>TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA BARTOFIL B2B</doc>
+<status status="FAIL" start="2024-01-26T00:20:24.051914" elapsed="18.901243"/>
 </suite>
 <statistics>
 <total>

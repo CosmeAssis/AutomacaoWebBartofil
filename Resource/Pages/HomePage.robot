@@ -40,3 +40,12 @@ E realizo o login com sucesso
     Quando clicar em Olá! Entre ou cadastra-se
     E preencher login e senha
     E clicar em Entrar
+    Então o Minha Conta será exibido no header
+
+Quando pesquisar o produto com SKU ${SKU}
+    Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
+    Wait Until Element Is Visible    ${HOME_GRID_RESULTADOPRODUTO}
+    Sleep    3s
+    Click Element    ${HOME_GRID_RESULTADOPRODUTO}
+    Wait Until Element Is Visible  ${HOME_IMAGE_PDP}
+    Wait Until Element Is Visible    ${HOME_SKU}
