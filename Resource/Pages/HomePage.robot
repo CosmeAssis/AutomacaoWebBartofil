@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
-Resource    ../Pages/PdpPage.robot
 Variables   ../Locators/Home_Locators.yml
 Variables   ../Data/Login.yml
 
