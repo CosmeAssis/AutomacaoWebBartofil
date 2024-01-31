@@ -9,3 +9,4 @@ HOME_MESSAGE_CONTANAOAPROVADA: //div[@class='message message-error error'][conta
 HOME_MESSAGE_LOGINSENHAINVALIDO: (//div[contains(.,'Login ou senha inválida.')])[9]
 HOME_INPUT_BUSCAPRODUTO: //input[@name='q']
 HOME_GRID_RESULTADOPRODUTO: //img[contains(@class,'ProductImage-sc-r6p7z fITroU')]
+HOME_BUTTON_PERMITIRCOOKIES: //button[@class='action allow primary']

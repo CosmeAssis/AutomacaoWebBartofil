@@ -1,4 +1,6 @@
 PDP_IMAGE_PDP: //img[contains(@class,'fotorama__img')]
 PDP_PAGETITLE_PRODUTO: //span[contains(@class,'base')]
 PDP_ITEMPROP_SKUPRODUTO: (//div[contains(@itemprop,'sku')])[2]
-PDP_BUTTON_ADDCARINHO: product-addtocart-button
+PDP_BUTTON_ADDCARRINHO: product-addtocart-button
+PDP_BUTTON_VERCARRINHO: //button[contains(@title,'Ver Carrinho')]
+PDP_BUTTON_FECHARPEDIDO:  //span[contains(.,'Fechar Pedido')]

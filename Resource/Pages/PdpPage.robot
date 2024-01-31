@@ -4,8 +4,8 @@ Variables   ../Locators/PDP_Locators.yml
 Resource    ../Resource.robot
 
 *** Variables ***
-${PRODUTO}
-${DATA_BIND}    //div[@data-bind='html: $parent.prepareMessageForHtml(message.text)'][contains(.,'${PRODUTO}')]
+${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}
+
 
 *** Keywords ***
 
@@ -16,5 +16,11 @@ E validar tela de PDP
 
 E adicionar o produto no carrinho
     Scroll Element Into View    locator=//div[@class='page-main-description product-full-width-section']
-    Click Button    ${PDP_BUTTON_ADDCARINHO}
-    ${PRODUTO}    Get Text    locator=//span[contains(@itemprop,'name')]
+    Click Button    ${PDP_BUTTON_ADDCARRINHO}
+    ${DESC_PRODUTO}    Get Text    locator=//span[contains(@itemprop,'name')]
+    Set Global Variable     ${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}    //div[@data-bind='html: $parent.prepareMessageForHtml(message.text)'][contains(.,'${DESC_PRODUTO}')]
+    Page Should Contain  ${DESC_PRODUTO}    ${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}
+    Wait Until Element Is Visible    ${PDP_BUTTON_VERCARRINHO}
+    Scroll Element Into View    ${PDP_BUTTON_VERCARRINHO}
+    Click Button    ${PDP_BUTTON_VERCARRINHO}
+    Click Element    ${PDP_BUTTON_FECHARPEDIDO}
