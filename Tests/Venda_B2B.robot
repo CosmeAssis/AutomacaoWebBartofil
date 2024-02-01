@@ -2,6 +2,7 @@
 Resource    ../Resource/Utils/OpenBrowser.robot
 Resource    ../Resource/Pages/HomePage.robot
 Resource    ../Resource/Pages/PdpPage.robot
+Resource    ../Resource/Pages/CheckoutPage.robot
 
 ##Execução antes de iniciar o teste
 Test Setup       Abrir o navegador
@@ -19,6 +20,6 @@ CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipa
     E validar tela de PDP
     E adicionar o produto no carrinho
     E selecionar o metodo de pagamento como Boleto Antecipado
-    E verificar o desconto de 3 porcento
-    E clicar em Vender
+    E verificar o desconto de 3%
+    E clicar em Finalizar Compra
     Entao mensagem de venda realizada com sucesso é exibida
