@@ -5,16 +5,60 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 6.0.2 (Python 3.11.1 on win32)" name="Generator">
+<meta content="Robot Framework 7.0 (Python 3.12.1 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
-<style media="all" type="text/css">
+<style media="all">
+:root {
+    --text-color: black;
+    --background-color: white;
+    --primary-color: #ddd;
+    --secondary-color: #ccc;
+    --link-color: #15c;
+    --link-hover-color: #61c;
+    --highlight-color: #eee;
+    --target-color: #f9f9f9;
+    --pass-color: #97bd61;
+    --fail-color: #ce3e01;
+    --warn-color: #fed84f;
+    --pass-link-color: #098a09;
+    --warn-link-color: #927201;
+    --fail-link-color: #ce3e01;
+    --ascending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+    --descending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+[data-theme="dark"] {
+    --text-color: #e2e1d7;
+    --background-color: #1c2227;
+    --primary-color: #26373b;
+    --secondary-color: #424f5a;
+    --link-color: #8cc4ff;
+    --link-hover-color: #bb86fc;
+    --highlight-color: #002b36;
+    --target-color: #1a252e;
+    --pass-link-color: #97bd61;
+    --warn-link-color: #fed84f;
+    --fail-link-color: #ff9b8f;
+    --ascending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAfn5+////f/cqYgAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
+    --descending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAA////fn5+K6jOaAAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
+}
 /* Generic and misc styles */
 body {
     font-family: Helvetica, sans-serif;
     font-size: 0.8em;
-    color: black;
+    color: black; /* Fallback value */
+    color: var(--text-color);
     padding: 6px;
-    background: white;
+    background: white; /* Fallback value */
+    background: var(--background-color);
+    margin-left: 15px;
+}
+body[theme-toggled] {
+    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 table {
     table-layout: fixed;
@@ -29,20 +73,37 @@ br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
 }
 hr {
-    background: #ccc;
+    background: #ccc; /* Fallback value */
+    background: var(--secondary-color);
     height: 1px;
     border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c;
+    color: #15c; /* Fallback value */
+    color: var(--link-color);
 }
 a > img {
-    border: 1px solid #15c !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #15c !important; /* Fallback value */
+    border-color: var(--link-color) !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c;
+    color: #61c; /* Fallback value */
+    color: var(--link-hover-color);
+}
+select {
+    background-color: white; /* Fallback value */
+    background-color: var(--background-color);
+    color: black; /* Fallback value */
+    color: var(--text-color);
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
+    border-radius: 4px;
 }
 .parent-name {
     font-size: 0.7em;
@@ -55,7 +116,7 @@ a:hover, a:active {
 #header {
     width: 65em;
     height: 3em;
-    margin: 6px 0;
+    margin: 20px 0 6px 0;
 }
 h1 {
     float: left;
@@ -83,14 +144,17 @@ h2 {
 }
 /* Status text colors -- !important allows using them in links */
 .fail {
-    color: #ce3e01 !important;
+    color: #ce3e01 !important; /* Fallback value */
+    color: var(--fail-link-color) !important;
     font-weight: bold;
 }
 .pass {
-    color: #098a09 !important;
+    color: #098a09 !important; /* Fallback value */
+    color: var(--pass-link-color) !important;
 }
 .skip {
-    color: #927201 !important;
+    color: #927201 !important; /* Fallback value */
+    color: var(--warn-link-color) !important;
     font-weight: bold;
 }
 .label {
@@ -98,8 +162,10 @@ h2 {
     font-size: 0.75em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: black;
-    background-color: #ddd;
+    color: black; /* Fallback value */
+    color: var(--text-color);
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
     border-radius: 3px;
 }
 .label.debug, .label.trace, .label.error, .label.keyword {
@@ -109,15 +175,18 @@ h2 {
     font-weight: bold;
 }
 .label.pass {
-    background-color: #97bd61;
+    background-color: #97bd61; /* Fallback value */
+    background-color: var(--pass-color);
     color: #000 !important;
 }
 .label.fail, .label.error {
-    background-color: #ce3e01;
+    background-color: #ce3e01; /* Fallback value */
+    background-color: var(--fail-color);
     color: #fff !important;
 }
 .label.skip, .label.warn {
-    background-color: #fed84f;
+    background-color: #fed84f; /* Fallback value */
+    background-color: var(--warn-color);
     color: #000 !important;
 }
 /* Top right header */
@@ -146,7 +215,8 @@ h2 {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd;
+    background: #ddd; /* Fallback value */
+    background: var(--primary-color);
 }
 /* Statistics table */
 .statistics {
@@ -156,15 +226,20 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #f4f4f4;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border: 1px solid #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd;
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -200,27 +275,33 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border: 1px solid #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
     width: auto;
     height: 7px;
     padding: 0;
-    background: #aaa;
 }
 .empty-graph {
-    background: #eee;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .pass-bar, .fail-bar, .skip-bar {
     float: left;
     height: 100%;
 }
 .fail-bar {
-    background: #ce3e01;
+    background: #ce3e01; /* Fallback value */
+    background: var(--fail-color);
 }
 .pass-bar {
-    background: #97bd61;
+    background: #97bd61; /* Fallback value */
+    background: var(--pass-color);
 }
 .skip-bar {
-    background: #fed84f;
+    background: #fed84f; /* Fallback value */
+    background: var(--warn-color);
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -230,30 +311,84 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--secondary-color);
 }
 .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==); /* Fallback value */
+    background-image: var(--ascending-icon);
+    background-color: #ccc !important; /* Fallback value */
+    background-color: var(--secondary-color) !important;
 }
 .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==); /* Fallback value */
+    background-image: var(--descending-icon);
+    background-color: #ccc !important; /* Fallback value */
+    background-color: var(--secondary-color) !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
+}
+#theme-toggle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 28px;
+    height: 28px;
+    border: none;
+    padding: 4px;
+    z-index: 1000;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: var(--highlight-color);
+}
+[data-theme="dark"] .dark-mode-icon,
+[data-theme="light"] .light-mode-icon {
+    display: none;
+}
+[data-theme="dark"] .light-mode-icon,
+[data-theme="light"] .dark-mode-icon {
+    display: block;
+}
+@keyframes highlight {
+    0% {
+        background: var(--primary-color)
+    }
+    100% {
+        background: var(--target-color);
+    }
+}
+:target {
+    background: var(--target-color);
+    transition: background 0.3s;
+    animation: highlight 4s;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 /* Icons are from Open Iconic <https://useiconic.com/open/>.
    Licensed under the MIT License. */
+:root {
+    --icon-filter: invert(0);
+    --icon-highlight: var(--secondary-color);
+    --elapsed-color: #666;
+}
+/* @media (prefers-color-scheme: dark) { */
+[data-theme="dark"] {
+    --icon-filter: invert(1);
+    --icon-highlight: #a39990;
+    --elapsed-color: #999;
+}
 /* Containers */
 .suite, .test, #errors {
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
+    border-width: 1px;
+    border-style: solid;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -282,8 +417,10 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #eee;
-    border-color: #ccc;
+    background-color: #eee; /* Fallback value */
+    background-color: var(--highlight-color);
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
 }
 .element-header-toggle {
     position: absolute;
@@ -293,10 +430,14 @@ th.stats-col-graph:hover {
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2Mmg4di0yaC04eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAzKSIgLz4KPC9zdmc+), none;
+    filter: var(--icon-filter);
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -304,7 +445,8 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -324,23 +466,31 @@ th.stats-col-graph:hover {
 }
 .name {
     font-weight: bold;
+    white-space: pre-wrap;
+}
+.arg, .assign {
+    white-space: pre-wrap;
 }
 .elapsed {
     float: right;
-    color: #666;
+    color: #666; /* Fallback value */
+    color: var(--elapsed-color);
     padding-left: 1em;
 }
 .link {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHlJREFUGJVtzrEJwmAQBtCn6ASuIKTIBhY2gmghBiJYB1udwk10B8FJbKMBcQFbtbkfJHrVwfu+4/idJR64Y9H7E3higj5O3S8Y44ApLnjhnXCNGhV2yNGggDJwiC02gavUbpDFvscRo4QdXOMKDHBufz3HLYKzNn4AbSkV3fncGQYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik01Ljg4LjAzYy0uMTguMDEtLjM2LjAzLS41My4wOS0uMjcuMS0uNTMuMjUtLjc1LjQ3YS41LjUgMCAxIDAgLjY5LjY5Yy4xMS0uMTEuMjQtLjE3LjM4LS4yMi4zNS0uMTIuNzgtLjA3IDEuMDYuMjIuMzkuMzkuMzkgMS4wNCAwIDEuNDRsLTEuNSAxLjVjLS40NC40NC0uOC40OC0xLjA2LjQ3LS4yNi0uMDEtLjQxLS4xMy0uNDEtLjEzYS41LjUgMCAxIDAtLjUuODhzLjM0LjIyLjg0LjI1Yy41LjAzIDEuMi0uMTYgMS44MS0uNzhsMS41LTEuNWMuNzgtLjc4Ljc4LTIuMDQgMC0yLjgxLS4yOC0uMjgtLjYxLS40NS0uOTctLjUzLS4xOC0uMDQtLjM4LS4wNC0uNTYtLjAzem0tMiAyLjMxYy0uNS0uMDItMS4xOS4xNS0xLjc4Ljc1bC0xLjUgMS41Yy0uNzguNzgtLjc4IDIuMDQgMCAyLjgxLjU2LjU2IDEuMzYuNzIgMi4wNi40Ny4yNy0uMS41My0uMjUuNzUtLjQ3YS41LjUgMCAxIDAtLjY5LS42OWMtLjExLjExLS4yNC4xNy0uMzguMjItLjM1LjEyLS43OC4wNy0xLjA2LS4yMi0uMzktLjM5LS4zOS0xLjA0IDAtMS40NGwxLjUtMS41Yy40LS40Ljc1LS40NSAxLjAzLS40NC4yOC4wMS40Ny4wOS40Ny4wOWEuNS41IDAgMSAwIC40NC0uODhzLS4zNC0uMi0uODQtLjIyeiIKICAvPgo8L3N2Zz4=), none;
+    filter: var(--icon-filter);
 }
 .expand {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUGJVjYCACKDAwMByA0ljFDjAwMPxnYGB4ABVQgLL/Q+VQBB6gseGmIivCkERXhFUSWRFOSawAAEl7E3uv1iMcAAAAAElFTkSuQmCC);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0xLjUgMGwtMS41IDEuNSA0IDQgNC00LTEuNS0xLjUtMi41IDIuNS0yLjUtMi41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgLz4KPC9zdmc+), none;
+    filter: var(--icon-filter);
 }
 .collapse {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAC5JREFUGJVjYCARNEAxTsn/UIyhCFkSQxG6ThQ+C5IpjWhG1yNb4YDFTdjEMAEACi8Q++9Y9TAAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik00IDBsLTQgNCAxLjUgMS41IDIuNS0yLjUgMi41IDIuNSAxLjUtMS41LTQtNHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIC8+Cjwvc3ZnPg==), none;
+    filter: var(--icon-filter);
 }
 .expand, .collapse, .link {
     float: left;
@@ -352,7 +502,10 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .link {
@@ -362,7 +515,8 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
 }
 /* Messages and errors */
 .messages .time, .messages .message {
@@ -403,11 +557,16 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    border: 1px solid #ccc;
+    filter: var(--icon-filter);
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -439,7 +598,7 @@ th.stats-col-graph:hover {
     cursor: default;
 }
 </style>
-<style media="print" type="text/css">
+<style media="print">
 body {
     background: white !important;
     padding: 0;
@@ -479,7 +638,7 @@ a:link, a:visited {
     background: #ddd !important;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 #javascript-disabled {
     width: 600px;
     margin: 100px auto 0 auto;
@@ -502,7 +661,7 @@ a:link, a:visited {
     font-style: italic;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 .doc > * {
     margin: 0.7em 1em 0.1em 1em;
     padding: 0;
@@ -514,14 +673,12 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
-    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
-    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -531,24 +688,32 @@ a:link, a:visited {
     letter-spacing: 0.1em;
 }
 .doc pre {
+    border-radius: 2px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #f4f4f4;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .doc code {
+    border-radius: 2px;
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
-.doc img {
-    border: 1px solid #ccc;
+.doc img, .doc table, .doc table th, .doc table td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
 }
 .doc hr {
-    background: #ccc;
+    background: #ccc; /* Fallback value */
+    background: var(--secondary-color);
     height: 1px;
     border: 0;
 }
@@ -560,6 +725,9 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
+    var test = window.testdata.findLoaded(testId);
+    if (test.status == "FAIL" || test.status == "SKIP")
+        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -623,7 +791,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL") {
+    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -847,7 +1015,6 @@ window.model = (function () {
         suite.populateSuites = createIterablePopulator('Suite');
         suite.childrenNames = ['keyword', 'suite', 'test'];
         suite.callWhenChildrenReady = function (callable) { callable(); };
-        suite.message = data.message;
         suite.children = function () {
             return suite.keywords().concat(suite.tests()).concat(suite.suites());
         };
@@ -938,6 +1105,7 @@ window.model = (function () {
             name: data.name,
             doc: data.doc,
             status: data.status,
+            message: data.message,
             times: data.times,
             id: data.parent ? data.parent.id + '-' + data.id : data.id
         };
@@ -958,7 +1126,6 @@ window.model = (function () {
                 return test.keywords();
         };
         test.tags = data.tags;
-        test.message = data.message;
         test.matchesTagPattern = function (pattern) {
             return containsTagPattern(test.tags, pattern);
         };
@@ -969,13 +1136,12 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
-        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =' : '');
+        kw.assign = data.assign + (data.assign ? ' =  ' : '');
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1354,8 +1520,9 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
+                         'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
+                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1398,6 +1565,7 @@ window.testdata = function () {
         return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
+        var status = element[8];
         var kw = model.Keyword({
             parent: parent,
             type: KEYWORD_TYPES[element[0]],
@@ -1413,7 +1581,12 @@ window.testdata = function () {
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(element[8], strings),
+            status: parseStatus(status),
+            message: function () {
+                var msg = status.length == 4 ? strings.get(status[3]) : '';
+                this.message = function () { return msg; };
+                return msg;
+            },
             times: model.Times(times(element[8])),
             isChildrenLoaded: typeof(element[9]) !== 'number'
         });
@@ -1624,6 +1797,20 @@ window.testdata = function () {
 }();
 </script>
 <script type="text/javascript">
+const lightModeIcon = `
+<svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+    viewBox="0 0 24 24" fill="var(--text-color)">
+    <rect fill="none" height="24" width="24" />
+    <path
+        d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
+</svg>`
+const darkModeIcon = `
+<svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+    viewBox="0 0 24 24" fill="var(--text-color)">
+    <rect fill="none" height="24" width="24" />
+    <path
+        d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" />
+</svg>`
 function removeJavaScriptDisabledWarning() {
     // Not using jQuery here for maximum speed
     document.getElementById('javascript-disabled').style.display = 'none';
@@ -1659,6 +1846,10 @@ function setTitle(suiteName, type) {
 function addHeader() {
     var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
+           '<button id=theme-toggle>' +
+             lightModeIcon +
+             darkModeIcon +
+           '</button>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
              '<span id="generated-ago">${ago} ago</span>' +
@@ -1670,6 +1861,7 @@ function addHeader() {
         ago: util.createGeneratedAgoString(generated),
         title: document.title
     }).appendTo($('#header'));
+    document.getElementById('theme-toggle')?.addEventListener('click', theme.onClick);
 }
 function addReportOrLogLink(myType) {
     var url;
@@ -1798,30 +1990,116 @@ function stopPropagation(event) {
     if (event.stopPropagation)
         event.stopPropagation();
 }
+const theme = function () {
+    const storageKey = 'theme-preference';
+    const urlParams = new URLSearchParams(window.location.search);
+    var storage;
+    var theme;
+    function init(givenStorage) {
+        storage = givenStorage;
+        theme = { value: getPreference() };
+        document.body.setAttribute('data-theme', theme.value);
+        reflectPreference();
+        window.matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', ({matches:isDark}) => {
+                theme.value = isDark ? 'dark' : 'light';
+                setPreference();
+            });
+        window.addEventListener('storage', ({key, newValue}) => {
+            if (key === storage.fullKey(storageKey)) {
+                theme.value = newValue === 'dark' ? 'dark' : 'light';
+                setPreference();
+            }
+        });
+    }
+    function getPreference() {
+        if (urlParams.has('theme')) {
+            var urlTheme = urlParams.get('theme') === 'dark' ? 'dark' : 'light';
+            storage.set(storageKey, urlTheme);
+            urlParams.delete('theme');
+            return urlTheme;
+        }
+        if (storage.get(storageKey))
+            return storage.get(storageKey) === 'dark' ? 'dark' : 'light';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function setPreference() {
+        storage.set(storageKey, theme.value);
+        reflectPreference();
+    }
+    function reflectPreference() {
+        document.body.setAttribute('data-theme', theme.value);
+        document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
+        const event = new Event('theme-change', {value: theme.value});
+        document.dispatchEvent(event);
+    }
+    function onClick() {
+        theme.value = theme.value === 'light' ? 'dark' : 'light';
+        document.body.setAttribute('theme-toggled', "");
+        setPreference();
+    }
+    return {init: init, getPreference: getPreference, setPreference: setPreference,
+        reflectPreference: reflectPreference, onClick: onClick};
+}();
+</script>
+<script type="text/javascript">
+storage = function () {
+    var prefix = 'robot-framework-';
+    var storage;
+    function init(user) {
+        if (user)
+            prefix += user + '-';
+        storage = getStorage();
+    }
+    function getStorage() {
+        // Use localStorage if it's accessible, normal object otherwise.
+        // Inspired by https://stackoverflow.com/questions/11214404
+        try {
+            localStorage.setItem(prefix, prefix);
+            localStorage.removeItem(prefix);
+            return localStorage;
+        } catch (exception) {
+            return {};
+        }
+    }
+    function get(key, defaultValue) {
+        var value = storage[fullKey(key)];
+        if (typeof value === 'undefined')
+            return defaultValue;
+        return value;
+    }
+    function set(key, value) {
+        storage[fullKey(key)] = value;
+    }
+    function fullKey(key) {
+        return prefix + key;
+    }
+    return {init: init, get: get, set: set, fullKey: fullKey};
+}();
 </script>
 <script type="text/javascript">
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,61839],[[4,5,6,0,[],[0,20,32090],[],[[7,0,0,[8],[1,243,9331],[[1,9,10,0,0,0,0,0,[1,243,1575],[[0,11,12,0,13,14,0,0,[1,244,1447],[[244,2,15]]],[0,16,12,0,17,0,0,0,[1,1691,126],[]]]],[0,18,19,0,0,0,0,0,[1,1818,2058],[[0,20,12,0,21,22,0,0,[1,1818,1972],[[1818,2,23]]],[0,24,12,0,25,26,0,0,[1,3790,86],[]]]],[0,27,19,0,0,0,0,0,[1,3877,340],[[0,28,12,0,29,30,0,0,[1,3877,80],[[3878,2,31]]],[0,24,12,0,25,32,0,0,[1,3957,259],[]]]],[0,33,19,0,0,0,0,0,[1,4217,198],[[0,34,12,0,35,36,0,0,[1,4217,121],[[4217,2,37]]],[0,38,12,0,39,40,0,0,[1,4338,76],[[4339,2,41],[4375,2,42],[4414,2,43]]]]],[0,44,19,0,0,0,0,0,[1,4415,76],[[0,45,12,0,46,47,0,0,[1,4416,75],[[4416,2,48]]]]],[0,49,19,0,0,0,0,0,[1,4492,2969],[[0,24,12,0,25,50,0,0,[1,4492,2969],[]]]],[2,51,10,0,0,0,0,0,[1,7462,2111],[[0,52,12,0,53,0,0,0,[1,7462,2111],[]]]]]],[54,0,0,[55],[1,9575,6794],[[1,9,10,0,0,0,0,0,[1,9575,1172],[[0,11,12,0,13,14,0,0,[1,9575,1059],[[9575,2,15]]],[0,16,12,0,17,0,0,0,[1,10634,113],[]]]],[0,18,19,0,0,0,0,0,[1,10748,1361],[[0,20,12,0,21,22,0,0,[1,10748,996],[[10748,2,23]]],[0,24,12,0,25,26,0,0,[1,11744,365],[]]]],[0,27,19,0,0,0,0,0,[1,12109,621],[[0,28,12,0,29,30,0,0,[1,12109,370],[[12109,2,31]]],[0,24,12,0,25,32,0,0,[1,12479,251],[]]]],[0,56,19,0,0,0,0,0,[1,12731,154],[[0,34,12,0,35,57,0,0,[1,12731,90],[[12731,2,58]]],[0,38,12,0,39,40,0,0,[1,12821,64],[[12821,2,41],[12850,2,42],[12885,2,43]]]]],[0,44,19,0,0,0,0,0,[1,12885,84],[[0,45,12,0,46,47,0,0,[1,12885,84],[[12886,2,48]]]]],[0,59,19,0,0,0,0,0,[1,12969,1295],[[0,24,12,0,25,60,0,0,[1,12969,1295],[]]]],[2,51,10,0,0,0,0,0,[1,14264,2104],[[0,52,12,0,53,0,0,0,[1,14264,2104],[]]]]]],[61,0,0,[62],[0,16372,15736,63],[[1,9,10,0,0,0,0,0,[1,16372,1112],[[0,11,12,0,13,14,0,0,[1,16372,996],[[16372,2,15]]],[0,16,12,0,17,0,0,0,[1,17369,115],[]]]],[0,18,19,0,0,0,0,0,[1,17484,1471],[[0,20,12,0,21,22,0,0,[1,17485,1447],[[17485,2,23]]],[0,24,12,0,25,26,0,0,[1,18932,23],[]]]],[0,27,19,0,0,0,0,0,[1,18956,364],[[0,28,12,0,29,30,0,0,[1,18956,98],[[18956,2,31]]],[0,24,12,0,25,32,0,0,[1,19055,265],[]]]],[0,64,19,0,0,0,0,0,[1,19320,197],[[0,34,12,0,35,36,0,0,[1,19320,117],[[19321,2,37]]],[0,38,12,0,39,65,0,0,[1,19437,79],[[19438,2,41],[19473,2,42],[19516,2,43]]]]],[0,44,19,0,0,0,0,0,[1,19517,73],[[0,45,12,0,46,47,0,0,[1,19517,73],[[19518,2,48]]]]],[0,66,19,0,0,0,0,0,[0,19591,10381],[[0,24,12,0,25,67,0,0,[0,19591,10381],[[29945,2,68],[29946,5,63]]]]],[2,51,10,0,0,0,0,0,[1,29973,2134],[[0,52,12,0,53,0,0,0,[1,29973,2134],[]]]]]]],[],[3,2,1,0]],[69,70,71,0,[],[0,32112,29725],[],[[7,0,0,[72],[1,32117,8681],[[1,73,10,0,0,0,0,0,[1,32118,1156],[[0,11,12,0,13,14,0,0,[1,32118,1042],[[32119,2,15]]],[0,74,12,0,75,76,0,0,[1,33160,114],[]]]],[0,18,19,0,0,0,0,0,[1,33275,1576],[[0,20,12,0,21,22,0,0,[1,33275,1547],[[33275,2,23]]],[0,24,12,0,25,26,0,0,[1,34822,29],[]]]],[0,27,19,0,0,0,0,0,[1,34852,132],[[0,28,12,0,29,30,0,0,[1,34852,91],[[34852,2,31]]],[0,24,12,0,25,32,0,0,[1,34943,41],[]]]],[0,33,19,0,0,0,0,0,[1,34984,239],[[0,34,12,0,35,36,0,0,[1,34984,126],[[34984,2,37]]],[0,38,12,0,39,40,0,0,[1,35110,113],[[35110,2,41],[35149,2,42],[35223,2,43]]]]],[0,44,19,0,0,0,0,0,[1,35223,92],[[0,45,12,0,46,47,0,0,[1,35223,92],[[35224,2,48]]]]],[0,49,19,0,0,0,0,0,[1,35316,3362],[[0,24,12,0,25,50,0,0,[1,35316,3361],[]]]],[2,51,10,0,0,0,0,0,[1,38678,2119],[[0,52,12,0,53,0,0,0,[1,38678,2119],[]]]]]],[54,0,0,[77],[1,40799,5773],[[1,73,10,0,0,0,0,0,[1,40800,1091],[[0,11,12,0,13,14,0,0,[1,40800,977],[[40800,2,15]]],[0,74,12,0,75,76,0,0,[1,41778,113],[]]]],[0,18,19,0,0,0,0,0,[1,41892,1431],[[0,20,12,0,21,22,0,0,[1,41892,1409],[[41892,2,23]]],[0,24,12,0,25,26,0,0,[1,43301,22],[]]]],[0,27,19,0,0,0,0,0,[1,43323,130],[[0,28,12,0,29,30,0,0,[1,43323,79],[[43324,2,31]]],[0,24,12,0,25,32,0,0,[1,43402,51],[]]]],[0,56,19,0,0,0,0,0,[1,43454,260],[[0,34,12,0,35,57,0,0,[1,43454,126],[[43454,2,58]]],[0,38,12,0,39,40,0,0,[1,43580,134],[[43581,2,41],[43633,2,42],[43714,2,43]]]]],[0,44,19,0,0,0,0,0,[1,43715,74],[[0,45,12,0,46,47,0,0,[1,43715,74],[[43715,2,48]]]]],[0,59,19,0,0,0,0,0,[1,43789,656],[[0,24,12,0,25,60,0,0,[1,43789,656],[]]]],[2,51,10,0,0,0,0,0,[1,44446,2125],[[0,52,12,0,53,0,0,0,[1,44446,2125],[]]]]]],[61,0,0,[78],[0,46573,15262,63],[[1,73,10,0,0,0,0,0,[1,46574,1110],[[0,11,12,0,13,14,0,0,[1,46574,997],[[46574,2,15]]],[0,74,12,0,75,76,0,0,[1,47571,113],[]]]],[0,18,19,0,0,0,0,0,[1,47685,1372],[[0,20,12,0,21,22,0,0,[1,47685,1350],[[47685,2,23]]],[0,24,12,0,25,26,0,0,[1,49035,22],[]]]],[0,27,19,0,0,0,0,0,[1,49057,152],[[0,28,12,0,29,30,0,0,[1,49057,102],[[49058,2,31]]],[0,24,12,0,25,32,0,0,[1,49159,49],[]]]],[0,64,19,0,0,0,0,0,[1,49209,245],[[0,34,12,0,35,36,0,0,[1,49209,125],[[49210,2,37]]],[0,38,12,0,39,65,0,0,[1,49334,120],[[49335,2,41],[49382,2,42],[49453,2,43]]]]],[0,44,19,0,0,0,0,0,[1,49454,83],[[0,45,12,0,46,47,0,0,[1,49454,83],[[49455,2,48]]]]],[0,66,19,0,0,0,0,0,[0,49537,10173],[[0,24,12,0,25,67,0,0,[0,49537,10173],[[59709,2,79],[59709,5,63]]]]],[2,51,10,0,0,0,0,0,[1,59710,2124],[[0,52,12,0,53,0,0,0,[1,59711,2123],[]]]]]]],[],[3,2,1,0]]],[],[],[6,4,2,0]];
+window.output["suite"] = [1,2,3,4,[],[1,0,69780],[],[[5,0,0,[6],[1,362,69415],[[1,7,8,0,0,0,0,0,[1,363,3079],[[0,9,10,0,11,12,0,0,[1,365,2644],[[365,2,13]]],[0,14,10,0,15,0,0,0,[1,3012,430],[]]]],[0,16,17,0,0,0,0,0,[1,3443,6166],[[0,18,10,0,19,20,0,0,[1,3444,2486],[[3445,2,21]]],[0,22,10,0,23,24,0,0,[1,5932,1643],[]],[0,25,10,0,26,27,0,0,[1,7575,2034],[[7576,2,28]]]]],[0,29,17,0,0,0,0,0,[1,9610,6838],[[0,30,17,0,0,0,0,0,[1,9611,509],[[0,31,10,0,32,33,0,0,[1,9612,221],[[9612,2,34]]],[0,22,10,0,23,35,0,0,[1,9833,286],[]]]],[0,36,17,0,0,0,0,0,[1,10120,1162],[[0,37,10,0,38,39,0,0,[1,10121,956],[[10124,2,40]]],[0,41,10,0,42,43,0,0,[1,11078,204],[[11078,2,44],[11150,2,45]]]]],[0,46,17,0,0,0,0,0,[1,11283,201],[[0,25,10,0,26,47,0,0,[1,11283,200],[[11284,2,48]]]]],[0,49,17,0,0,0,0,0,[1,11484,4964],[[0,22,10,0,23,50,0,0,[1,11484,4963],[]]]]]],[0,51,17,0,0,0,0,0,[1,16449,9507],[[0,37,10,0,38,52,0,0,[1,16450,2344],[[16451,2,53]]],[0,22,10,0,23,54,0,0,[1,18795,1234],[]],[0,55,56,0,57,58,0,0,[1,20030,3001],[[23030,2,59]]],[0,31,10,0,32,54,0,0,[1,23031,2925],[[23031,2,60]]]]],[0,61,62,0,0,0,0,0,[1,25956,2373],[[0,22,10,0,23,63,0,0,[1,25958,1036],[]],[0,22,10,0,23,64,0,0,[1,26994,1175],[]],[0,22,10,0,23,65,0,0,[1,28170,159],[]]]],[0,66,62,0,0,0,0,0,[1,28331,13764],[[0,67,10,0,68,69,0,0,[1,28332,410],[]],[3,70,0,0,0,0,0,0,[1,28743,564],[[4,71,0,0,0,0,0,0,[1,28744,176],[[0,31,10,0,32,72,0,0,[1,28744,176],[[28745,2,73]]]]],[4,74,0,0,0,0,0,0,[1,28920,171],[[0,31,10,0,32,72,0,0,[1,28922,169],[[28923,2,73]]]]],[4,75,0,0,0,0,0,0,[1,29092,115],[[0,31,10,0,32,72,0,0,[1,29093,114],[[29093,2,73]]]]],[4,76,0,0,0,0,0,0,[1,29207,99],[[0,31,10,0,32,72,0,0,[1,29208,99],[[29208,2,73]]]]]]],[0,25,10,0,26,77,0,0,[1,29307,256],[[29307,2,78]]],[0,79,10,0,80,81,82,0,[1,29563,160],[[29723,2,83]]],[0,84,56,0,85,86,0,0,[1,29724,1],[[29725,2,87]]],[0,88,10,0,89,90,0,0,[1,29726,94],[[29819,2,91]]],[0,22,10,0,23,92,0,0,[1,29820,1720],[]],[0,67,10,0,68,92,0,0,[1,31542,356],[]],[0,25,10,0,26,92,0,0,[1,31898,6403],[[31899,2,93]]],[0,31,10,0,32,94,0,0,[1,38301,3792],[[38303,2,95]]]]],[0,96,97,0,0,0,0,0,[1,42095,13184],[[0,22,10,0,23,98,0,0,[1,42097,4098],[]],[0,55,56,0,57,99,0,0,[1,46195,3003],[[49197,2,59]]],[0,31,10,0,32,100,0,0,[1,49198,785],[[49199,2,101]]],[0,22,10,0,23,102,0,0,[1,49984,1905],[]],[0,67,10,0,68,102,0,0,[1,51889,388],[]],[0,55,56,0,57,99,0,0,[1,52278,3001],[[55278,2,59]]]]],[0,103,97,0,0,0,0,0,[1,55280,3204],[[0,79,10,0,80,104,105,0,[1,55281,34],[[55315,2,106]]],[0,107,108,0,109,110,105,0,[1,55315,1],[[55316,2,111]]],[0,107,108,0,109,112,105,0,[1,55317,0],[[55317,2,113]]],[0,114,56,0,115,116,117,0,[1,55317,0],[[55317,2,118]]],[0,119,56,0,120,121,122,0,[1,55318,0],[[55318,2,123]]],[0,119,56,0,120,124,125,0,[1,55328,1],[[55329,2,126]]],[0,127,56,0,128,125,125,0,[1,55330,0],[[55330,2,126]]],[0,107,108,0,109,129,125,0,[1,55330,0],[[55331,2,130]]],[0,25,10,0,26,102,0,0,[1,55331,115],[[55331,2,131]]],[0,55,56,0,57,99,0,0,[1,55447,3001],[[58448,2,59]]],[0,88,10,0,89,125,0,0,[1,58449,36],[[58484,2,132]]]]],[0,133,97,0,0,0,0,0,[1,58485,3532],[[0,55,56,0,57,99,0,0,[1,58485,3001],[[61486,2,59]]],[0,67,10,0,68,134,0,0,[1,61487,298],[]],[0,25,10,0,26,134,0,0,[1,61785,231],[[61785,2,135]]]]],[0,136,97,0,0,0,0,0,[1,62018,6550],[[0,137,10,0,138,139,0,0,[1,62018,6549],[]]]],[2,140,8,0,0,0,0,0,[1,68570,1207],[[0,141,10,0,142,0,0,0,[1,68571,1205],[]]]]]]],[],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Tests","*C:\\Users\\bianc\\OneDrive\\Área de Trabalho\\Bartofil\\RegressãoStagingBartofil\\Tests","*../Tests","*Login B2B","*C:\\Users\\bianc\\OneDrive\\Área de Trabalho\\Bartofil\\RegressãoStagingBartofil\\Tests\\Login_B2B.robot","*../Tests/Login_B2B.robot","*CN0001-Realizar login com sucesso no site do parceiro Bartofil","*login_sucesso","*Abrir o navegador","*OpenBrowser","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*browser=${browser}","*Opening browser 'chrome' to base url 'None'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Dado que acesso o site do parceiro Bartofil","*HomePage","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${url}","*Opening url '<a href=\"https://mcstaging.bartofil.com.br/\">https://mcstaging.bartofil.com.br/\x3c/a>'","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${StoreLogo}, timeout=10s","*Quando clicar em Olá! Entre ou cadastra-se","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${LinkCustomerLogin}","*Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.","*${ModalJaSouCliente}, timeout=10s","*E preencher login e senha","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${InputUsernameLogin}, ${CNPJ_Empresa_Aprovada}","*Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.","*Input Password","*<p>Types the given password into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${InputPasswordLogin}, ${Password}","*Typing password into text field '//input[contains(@title,'Senha')]'.","*Temporally setting log level to: NONE","*Log level changed from NONE to INFO.","*E clicar em Entrar","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${ButtonLogin}","*Clicking button '//button[@class='action login primary']'.","*Então o Minha Conta será exibido no header","*${HOME_HEADER_MINHACONTA}, timeout=10s","*Fechar o navegador","*Close Browser","*<p>Closes the current browser.\x3c/p>","*CN0002-Realizar login com conta em aprovação","*login_conta_emaprovacao","*E preencher login e senha de uma conta em aprovação","*${InputUsernameLogin}, ${CNPJ_Empresa_EmAprovacao}","*Typing text '21483062000171' into text field '//input[@placeholder='CPF/CNPJ']'.","*Então mensagem que a conta ainda não foi aprovada é exibida","*${HOME_MESSAGE_CONTANAOAPROVADA}, timeout=10s","*CN0003-Realizar login com senha incorreta","*login_senha_incorreta","*Element '(//diva[contains(.,'Login ou senha inválida.')])[9]' not visible after 10 seconds.","*E preencher com uma senha incorreta","*${InputPasswordLogin}, ${Password_Invalido}","*Então mensagem informando que Login e Senha é inválido é exibida","*${HOME_MESSAGE_LOGINSENHAINVALIDO}, timeout=10s","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-1.png\"><img src=\"selenium-screenshot-1.png\" width=\"800px\">\x3c/a>","*Login B2B Mobile","*C:\\Users\\bianc\\OneDrive\\Área de Trabalho\\Bartofil\\RegressãoStagingBartofil\\Tests\\Login_B2B_Mobile.robot","*../Tests/Login_B2B_Mobile.robot","*login_sucesso_mobile","*Abrir Navegador no Celular","*Set Window Size","*<p>Sets current windows size to given <code>width\x3c/code> and <code>height\x3c/code>.\x3c/p>","*430, 932","*login_conta_emaprovacao_mobile","*login_senha_incorreta_mobile","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"selenium-screenshot-2.png\"><img src=\"selenium-screenshot-2.png\" width=\"800px\">\x3c/a>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Venda B2B","*/Users/macbook/AutomacaoWebBartofil/Tests/Venda_B2B.robot","*../Tests/Venda_B2B.robot","*<p>TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA BARTOFIL B2B\x3c/p>","*CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado","*Venda com metodo de pagamento Boleto Antecipado","*Abrir o navegador","*OpenBrowser","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*browser=${BROWSER}","*Opening browser 'chrome' to base url 'None'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Dado que acesso o site do parceiro Bartofil","*HomePage","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${URL_BARTOFIL}","*Opening url '<a href=\"https://mcstaging.bartofil.com.br/\">https://mcstaging.bartofil.com.br/\x3c/a>'","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${HOME_IMAGE_STORELOGO}    timeout=10s","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${HOME_BUTTON_PERMITIRCOOKIES}","*Clicking button '//button[@class='action allow primary']'.","*E realizo o login com sucesso","*Quando clicar em Olá! Entre ou cadastra-se","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${HOME_LINK_CUSTOMERLOGIN}","*Clicking element '(//a[contains(@class,'customer-login-link')])[1]'.","*${HOME_MODALTITLE_JASOUCLIENTE}    timeout=10s","*E preencher login e senha","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}","*Typing text '30332817000128' into text field '//input[@placeholder='CPF/CNPJ']'.","*Input Password","*<p>Types the given password into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${HOME_INPUT_PASSWORD}    ${PASSWORD}","*Typing password into text field '//input[contains(@title,'Senha')]'.","*Temporally setting log level to: NONE","*E clicar em Entrar","*${HOME_BUTTON_LOGIN}","*Clicking button '//button[@class='action login primary']'.","*Então o Minha Conta será exibido no header","*${HOME_HEADER_MINHACONTA}    timeout=10s","*Quando pesquisar o produto com SKU 108384","*${HOME_INPUT_BUSCAPRODUTO}    ${SKU}","*Typing text '108384' into text field '//input[@name='q']'.","*${HOME_GRID_RESULTADOPRODUTO}","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*3s","*Slept 3 seconds.","*Clicking element '//img[contains(@class,'ProductImage-sc-r6p7z fITroU')]'.","*E validar tela de PDP","*PdpPage","*${PDP_PAGETITLE_PRODUTO}","*${PDP_IMAGE_PDP}","*${PDP_ITEMPROP_SKUPRODUTO}","*E adicionar o produto no carrinho","*Scroll Element Into View","*<p>Scrolls the element identified by <code>locator\x3c/code> into view.\x3c/p>","*${PDP_LABEL_DESCPRODUTO}","*${index}    IN RANGE    4","*${index} = 0","*${PDP_BUTTON_ADICIONAR_QUANTIDADE_PRODUTO}","*Clicking element '//button[@class='increment']'.","*${index} = 1","*${index} = 2","*${index} = 3","*${PDP_BUTTON_ADDCARRINHO}","*Clicking button 'product-addtocart-button'.","*Get Text","*<p>Returns the text value of the element identified by <code>locator\x3c/code>.\x3c/p>","*${PDP_LABEL_NOMEPRODUTO}","*${DESC_PRODUTO}","*${DESC_PRODUTO} = FILTRO ÓLEO CARRETA/CAMINHÃO VOLVO METAL LEVE","*Set Global Variable","*<p>Makes a variable available globally in all tests and suites.\x3c/p>","*${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}    //div[@data-bind='html: $parent.prepareMessageForHtml(message.text)'][contains(.,'${DESC_PRODUTO}')]","*${PDP_MENSAGEM_PRODUTOADDAOCARRINHO} = //div[@data-bind='html: $parent.prepareMessageForHtml(message.text)'][contains(.,'FILTRO ÓLEO CARRETA/CAMINHÃO VOLVO METAL LEVE')]","*Page Should Contain","*<p>Verifies that current page contains <code>text\x3c/code>.\x3c/p>","*${DESC_PRODUTO}    ${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}","*Current page contains text 'FILTRO ÓLEO CARRETA/CAMINHÃO VOLVO METAL LEVE'.","*${PDP_BUTTON_VERCARRINHO}","*Clicking button '//button[contains(@title,'Ver Carrinho')]'.","*${PDP_BUTTON_FECHARPEDIDO}","*Clicking element '//span[contains(.,'Fechar Pedido')]'.","*E selecionar o metodo de pagamento como Boleto Antecipado","*CheckoutPage","*${CHECKOUT_LABEL_RESUMODOPEDIDO}","*3","*${CHECKOUT_BUTTON_CONTINUAR}","*Clicking element '//button[@class='action primary checkout next-step-trigger']'.","*${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}","*E verificar o desconto de 3% do Boleto Antecipado","*${CHECKOUT_PRICE_VALORTOTALPEDIDO}","*${VALOR_ORIGINAL_PRODUTO}","*${VALOR_ORIGINAL_PRODUTO} = R$ 207,70","*Replace String","*String","*<p>Replaces <code>search_for\x3c/code> in the given <code>string\x3c/code> with <code>replace_with\x3c/code>.\x3c/p>","*${VALOR_ORIGINAL_PRODUTO}    R$    ${EMPTY}","*${VALOR_ORIGINAL_PRODUTO} =  207,70","*${VALOR_ORIGINAL_PRODUTO}    ,    .","*${VALOR_ORIGINAL_PRODUTO} =  207.70","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*0.03","*${PERCENTUAL_DESCONTO}","*${PERCENTUAL_DESCONTO} = 0.03","*Evaluate","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*round(${VALOR_ORIGINAL_PRODUTO} * ${PERCENTUAL_DESCONTO},2)","*${desconto_calculado}","*${desconto_calculado} = 6.23","*round(${VALOR_ORIGINAL_PRODUTO} - ${desconto_calculado},2)","*${valor_calculado}","*${valor_calculado} = 201.47","*Convert To String","*<p>Converts the given item to a Unicode string.\x3c/p>","*${valor_calculado}    .    ,","*${valor_calculado} = 201,47","*Clicking button '//input[@value='getnet_paymentmagento_boleto']'.","*Current page contains text '201,47'.","*E clicar em Finalizar Compra","*${CHECKOUT_BUTTON_FINALIZARCOMPRA}","*Clicking button '(//button[contains(@title,'Finalizar Compra')])[5]'.","*Entao mensagem Pronto! Já recebemos o seu pedido. é exibida","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*${MENSAGEM_PEDIDO_RECEBIDO}","*Fechar o navegador","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:01:02","fail":2,"label":"All Tests","pass":4,"skip":0}],[{"elapsed":"00:00:07","fail":0,"label":"login_conta_emaprovacao","pass":1,"skip":0},{"elapsed":"00:00:06","fail":0,"label":"login_conta_emaprovacao_mobile","pass":1,"skip":0},{"elapsed":"00:00:16","fail":1,"label":"login_senha_incorreta","pass":0,"skip":0},{"elapsed":"00:00:15","fail":1,"label":"login_senha_incorreta_mobile","pass":0,"skip":0},{"elapsed":"00:00:09","fail":0,"label":"login_sucesso","pass":1,"skip":0},{"elapsed":"00:00:09","fail":0,"label":"login_sucesso_mobile","pass":1,"skip":0}],[{"elapsed":"00:01:02","fail":2,"id":"s1","label":"Tests","name":"Tests","pass":4,"skip":0},{"elapsed":"00:00:32","fail":1,"id":"s1-s1","label":"Tests.Login B2B","name":"Login B2B","pass":2,"skip":0},{"elapsed":"00:00:30","fail":1,"id":"s1-s2","label":"Tests.Login B2B Mobile","name":"Login B2B Mobile","pass":2,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:01:09","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:01:09","fail":0,"label":"Venda com metodo de pagamento Boleto Antecipado","pass":1,"skip":0}],[{"elapsed":"00:01:10","fail":0,"id":"s1","label":"Venda B2B","name":"Venda B2B","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1706140352223;
+window.output["baseMillis"] = 1706839011623;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 61858;
+window.output["generated"] = 69807;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1831,7 +2109,7 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
 </script>
 <title></title>
 </head>
-<body>
+<body data-theme="dark">
 <div id="javascript-disabled">
   <h1>Opening Robot Framework log failed</h1>
   <ul>
@@ -1841,12 +2119,13 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
   </ul>
 </div>
 <script type="text/javascript">removeJavaScriptDisabledWarning();</script>
-
 <div id="header"></div>
 <div id="statistics-container"></div>
 
 <script type="text/javascript">
 $(document).ready(function() {
+    storage.init();
+    theme.init(storage);
     try {
         var topsuite = window.testdata.suite();
     } catch (error) {
@@ -1854,6 +2133,7 @@ $(document).ready(function() {
         return;
     }
     initLayout(topsuite.name, 'Log');
+    theme.reflectPreference();
     addStatistics();
     addErrors();
     addExecutionLog(topsuite);
@@ -1894,25 +2174,6 @@ function drawErrorsRecursively(errors, target) {
         // Errors may have moved scroll position. Resetting location re-scrolls.
         if (window.location.hash)
             window.location.replace(window.location.hash);
-        highlightLinkTarget();
-    }
-}
-
-function highlightLinkTarget() {
-    if (window.location.hash) {
-        var target = $(window.location.hash);
-        highlight(target);
-    }
-}
-
-function highlight(element, color) {
-    if (color === undefined)
-        color = 242;
-    if (color < 255) {
-        element.css({'background-color': 'rgb('+color+','+color+','+color+')'});
-        setTimeout(function () { highlight(element, color+1); }, 300);
-    } else {
-        element.css({'background-color': ''});
     }
 }
 
@@ -1928,9 +2189,8 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
-            window.location.hash = '';
             window.location.hash = id;
-            highlightLinkTarget();
+            document.getElementById(id).scrollIntoView();
         }
     });
 }
@@ -2128,8 +2388,9 @@ function addExecutionLog(main) {
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
         <span class="label ${status.toLowerCase()}">${type}</span>
-        <span>{{html assign}}</span>
+        <span class="assign">{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
+        &nbsp;
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
@@ -2163,6 +2424,12 @@ function addExecutionLog(main) {
           <th>Start / End / Elapsed:</th>
           <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
         </tr>
+        {{if message()}}
+        <tr>
+          <th>Message:</th>
+          <td class="message">{{html message()}}</td>
+        </tr>
+        {{/if}}
       </table>
     </div>
   </div>
@@ -2185,6 +2452,7 @@ function addExecutionLog(main) {
   <div id="log-level-selector">
   Log level:
     <select onchange="logLevelSelected(this.options[selectedIndex].value)">
+      <option value="3">WARN</option>
       <option value="2">INFO</option>
       <option value="1">DEBUG</option>
       {{if showTrace()}}<option value="0">TRACE</option>{{/if}}
