@@ -13,7 +13,7 @@ Documentation    TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA B
 
 *** Test Cases ***
 
-CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
+Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     [Tags]    Venda com metodo de pagamento Boleto Antecipado
     Dado que acesso o site do parceiro Bartofil
     E realizo o login com sucesso
