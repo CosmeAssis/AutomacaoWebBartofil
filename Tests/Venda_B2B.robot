@@ -14,12 +14,13 @@ Documentation    TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA B
 *** Test Cases ***
 
 CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
+    [Tags]    Venda com metodo de pagamento Boleto Antecipado
     Dado que acesso o site do parceiro Bartofil
     E realizo o login com sucesso
     Quando pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
     E selecionar o metodo de pagamento como Boleto Antecipado
-    E verificar o desconto de 3%
+    E verificar o desconto de 3% do Boleto Antecipado
     E clicar em Finalizar Compra
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
