@@ -15,6 +15,8 @@ Documentation    TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA B
 
 Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     [Tags]    Venda com metodo de pagamento Boleto Antecipado
+    [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento. 
+    ...    Esta sendo validado o desconto de 3% com sucesso e a conclusao do pedido para pagamento.
     Dado que acesso o site do parceiro Bartofil
     E realizo o login com sucesso
     Quando pesquisar o produto com SKU 108384
@@ -24,3 +26,15 @@ Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     E verificar o desconto de 3% do Boleto Antecipado
     E clicar em Finalizar Compra
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
+
+Venda de Produto nao configuravel com metodo de pagamento Pix
+    [Tags]    Venda com metodo de pagamento Pix
+    [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Pix, onde o teste foi encerrado na validacao do desconto de 3%. 
+    ...    Porque esta retornando erro no servidor da getnet devido a falta da instituicao finaceira nao esta configurada
+    Dado que acesso o site do parceiro Bartofil
+    E realizo o login com sucesso
+    Quando pesquisar o produto com SKU 108384
+    E validar tela de PDP
+    E adicionar o produto no carrinho
+    E selecionar o metodo de pagamento como Pix
+    E verificar o desconto de 3% do Pix
