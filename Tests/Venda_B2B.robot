@@ -38,3 +38,16 @@ Venda de Produto nao configuravel com metodo de pagamento Pix
     E adicionar o produto no carrinho
     E selecionar o metodo de pagamento como Pix
     E verificar o desconto de 3% do Pix
+
+Venda de Produto nao configuravel com metodo de pagamento Cartao de Credito
+    [Tags]    Venda com metodo de pagamento Cartao de Credito
+    [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Cartao de Credito.
+    Dado que acesso o site do parceiro Bartofil
+    E realizo o login com sucesso
+    Quando pesquisar o produto com SKU 108384
+    E validar tela de PDP
+    E adicionar o produto no carrinho
+    E selecionar o metodo de pagamento como Cartao de Credito
+    E digitar as informacoes do cartao
+    E clicar em Finalizar Compra
+    Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
