@@ -1,6 +1,6 @@
 CHECKOUT_LABEL_RESUMODOPEDIDO:  //span[@class='title desk'][contains(.,'Resumo do Pedido')]
 CHECKOUT_BUTTON_CONTINUAR:  //button[@class='action primary checkout next-step-trigger']
-CHECKOUT_PRICE_VALORTOTALPEDIDO:  (//span[contains(@class,'price')])[9] 
+CHECKOUT_PRICE_VALORTOTALPEDIDO:  (//span[contains(@class,'price')])[11]
 CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO:  //input[@value='getnet_paymentmagento_boleto']
 CHECKOUT_BUTTON_FINALIZARCOMPRA:  //button[@type='button'][contains(.,'Finalizar Compra')]
 CHECKOUT_RADIOBUTTON_PIX: getnet_paymentmagento_pix

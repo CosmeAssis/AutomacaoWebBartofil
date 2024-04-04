@@ -28,7 +28,7 @@ Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
 
 Venda de Produto nao configuravel com metodo de pagamento Pix
-    [Tags]    Venda com metodo de pagamento Pix
+    [Tags]    PedidoMetodoPix
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Pix, onde o teste foi encerrado na validacao do desconto de 3%. 
     ...    Porque esta retornando erro no servidor da getnet devido a falta da instituicao finaceira nao esta configurada
     Dado que acesso o site do parceiro Bartofil
