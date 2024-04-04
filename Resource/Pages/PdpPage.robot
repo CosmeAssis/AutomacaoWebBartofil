@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
 Variables   ../Locators/PDP_Locators.yml
+Variables   ../Locators/Checkout_Locators.yml
 Resource    ../Resource.robot
 
 *** Variables ***
@@ -26,3 +27,11 @@ E adicionar o produto no carrinho
     Scroll Element Into View    ${PDP_BUTTON_VERCARRINHO}
     Click Button    ${PDP_BUTTON_VERCARRINHO}
     Click Element    ${PDP_BUTTON_FECHARPEDIDO}
+    # Inicio tela de checkout
+    Wait Until Element Is Visible    ${CHECKOUT_BUTTON_NEXTSTEP}
+    Sleep    3
+    Click Element    ${CHECKOUT_BUTTON_NEXTSTEP}
+    #Wait Until Element Is Visible    //div[contains(@class,'opc-wrapper')]
+    Wait Until Element Is Enabled    //input[@data-bind='click: removeRewardPoints']   
+    #Click Element    //input[@data-bind='click: removeRewardPoints']
+    #Wait Until Element Is Visible    //div[@class='opc-payment']

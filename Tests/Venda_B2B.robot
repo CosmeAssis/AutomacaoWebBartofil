@@ -40,7 +40,7 @@ Venda de Produto nao configuravel com metodo de pagamento Pix
     E verificar o desconto de 3% do Pix
 
 Venda de Produto nao configuravel com metodo de pagamento Cartao de Credito
-    [Tags]    Venda com metodo de pagamento Cartao de Credito
+    [Tags]    VendaCartaoCredito
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Cartao de Credito.
     Dado que acesso o site do parceiro Bartofil
     E realizo o login com sucesso

@@ -54,3 +54,12 @@ E verificar o desconto de 3% do Pix
     Click Button    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
     Page Should Contain   ${valor_calculado}
+
+E selecionar o metodo de pagamento como Cartao de Credito
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
+    Sleep    3
+    Click Element    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
+    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
+
+E digitar as informacoes do cartao
+    Input Text    //input[contains(@data-container,'cc-cc-number')]    5155901222280001
