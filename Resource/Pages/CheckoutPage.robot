@@ -32,6 +32,7 @@ E clicar em Finalizar Compra
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
 
 Entao mensagem ${MENSAGEM_PEDIDO_RECEBIDO} é exibida
+    Sleep    3
     Wait Until Page Contains    ${MENSAGEM_PEDIDO_RECEBIDO}
 
 E selecionar o metodo de pagamento como Pix
@@ -63,3 +64,12 @@ E selecionar o metodo de pagamento como Cartao de Credito
 
 E digitar as informacoes do cartao
     Input Text    //input[contains(@data-container,'cc-cc-number')]    5155901222280001
+    Input Text    //input[contains(@class,'input-text cvv')]    321
+    Sleep    3
+    Click Element    //select[@name='payment[cc_exp_month]'][contains(@id,'expiration')]
+    Click Element    //option[@value='3'][contains(.,'03 - março')]
+    Click Element    //select[contains(@name,'payment[cc_exp_year]')]
+    Click Element    //option[@value='2030']
+    Input Text    //input[@type='text'][contains(@id,'name')]    CLIENTE BARTOFIL
+    Click Element    //select[@name='payment[cc_installments]'][contains(@id,'installments')]
+    Click Element    (//option[contains(@value,'1')])[10]
