@@ -8,7 +8,6 @@ Variables   ../Locators/Checkout_Locators.yml
 E selecionar o metodo de pagamento como Boleto Antecipado
     Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
     Sleep    3
-    Click Element    ${CHECKOUT_BUTTON_CONTINUAR}
     Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
     Sleep    3
@@ -32,13 +31,12 @@ E clicar em Finalizar Compra
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
 
 Entao mensagem ${MENSAGEM_PEDIDO_RECEBIDO} é exibida
-    Sleep    3
+    Sleep    5
     Wait Until Page Contains    ${MENSAGEM_PEDIDO_RECEBIDO}
 
 E selecionar o metodo de pagamento como Pix
     Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
     Sleep    3
-    Click Element    ${CHECKOUT_BUTTON_CONTINUAR}
     Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3

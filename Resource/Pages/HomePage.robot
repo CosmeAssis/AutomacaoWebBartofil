@@ -6,7 +6,7 @@ Variables   ../Data/Login.yml
 *** Keywords ***
 Dado que acesso o site do parceiro Bartofil
     Go To    ${URL_BARTOFIL}
-    Wait Until Element Is Visible    ${HOME_IMAGE_STORELOGO}    timeout=10s
+    Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    timeout=10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
     
 Quando clicar em Olá! Entre ou cadastra-se 
