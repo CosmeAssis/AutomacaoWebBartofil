@@ -6,9 +6,8 @@ Variables   ../Locators/Checkout_Locators.yml
 *** Keywords ***
 
 E selecionar o metodo de pagamento como Boleto Antecipado
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
-    Sleep    3
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
+    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    3s
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
     Sleep    3
 
@@ -31,13 +30,12 @@ E clicar em Finalizar Compra
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
 
 Entao mensagem ${MENSAGEM_PEDIDO_RECEBIDO} é exibida
-    Sleep    5
+    Sleep    3
     Wait Until Page Contains    ${MENSAGEM_PEDIDO_RECEBIDO}
 
 E selecionar o metodo de pagamento como Pix
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
-    Sleep    3
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
+    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}    3s
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
     
@@ -55,10 +53,10 @@ E verificar o desconto de 3% do Pix
     Page Should Contain   ${valor_calculado}
 
 E selecionar o metodo de pagamento como Cartao de Credito
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
     Sleep    3
     Click Element    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
-    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
+    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    3s
 
 E digitar as informacoes do cartao
     Input Text    //input[contains(@data-container,'cc-cc-number')]    5155901222280001
