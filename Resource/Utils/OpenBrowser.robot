@@ -3,7 +3,7 @@ Resource          ../Resource.robot
 
 *** Variables ***
 ${BROWSER}                     chrome
-${URL_BARTOFIL}                https://mcstaging.bartofil.com.br/
+${URL_BARTOFIL_B2B}                https://mcstaging.bartofil.com.br/
 
 *** Keywords ***
 
