@@ -1,2 +1,12 @@
-CRIAR O ARQUIVO COM O NOME Login.yml no caminho Resource/Data
-![alt text](image.png)
+# Projeto Automacao Web Bartofil
+
+## ⚙️Execucao dos Testes
+
+### Criar a pasta Data dentro de Resource
+#### Criar o arquivo Login.yml dentro da pasta Data com as variaveis:
+```
+CNPJ_EMPRESA_APROVADA:
+PASSWORD: 
+CNPJ_EMPRESA_EM_APROVACAO: 
+PASSWORD_INVALIDO:
+```
