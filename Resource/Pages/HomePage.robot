@@ -12,17 +12,23 @@ Dado que acesso o site do parceiro Bartofil
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
     
 Quando clicar em Olá! Entre ou cadastra-se 
+    # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
+    # Aguardar esperar aparecer o modal do login
     Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    5s
 
 E preencher login e senha
+    # Digitar o CPF no login
     Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
+    # Digitar a senha no login
     Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
 
 E clicar em Entrar
+    # Realizar o click no botao Login
     Click Button    ${HOME_BUTTON_LOGIN}
 
 Então o Minha Conta será exibido no header
+    # Aguardar exibir o icone Minha Conta no header
     Wait Until Element Is Visible    ${HOME_HEADER_MINHACONTA}  5s
 
 E preencher login e senha de uma conta em aprovação
