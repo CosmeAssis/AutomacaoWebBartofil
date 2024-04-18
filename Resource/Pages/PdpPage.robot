@@ -29,7 +29,7 @@ E adicionar o produto no carrinho
     Click Element    ${PDP_BUTTON_FECHARPEDIDO}
     # Inicio tela de checkout
     Wait Until Element Is Visible    ${CHECKOUT_BUTTON_NEXTSTEP}
-    Sleep    3
+    Sleep    5
     Click Element    ${CHECKOUT_BUTTON_NEXTSTEP}
     #Wait Until Element Is Visible    //div[contains(@class,'opc-wrapper')]
     Wait Until Element Is Enabled    //input[@data-bind='click: removeRewardPoints']   
