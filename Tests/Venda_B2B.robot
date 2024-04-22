@@ -14,7 +14,7 @@ Documentation    TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA B
 *** Test Cases ***
 
 Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
-    [Tags]    Venda com metodo de pagamento Boleto Antecipado
+    [Tags]    BoletoAntecipado
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento. 
     ...    Esta sendo validado o desconto de 3% com sucesso e a conclusao do pedido para pagamento.
     Dado que acesso o site do parceiro Bartofil
@@ -22,6 +22,7 @@ Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     Quando pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
+    E clicar para nao utilizar o programa de ponto do parceiro
     E selecionar o metodo de pagamento como Boleto Antecipado
     E verificar o desconto de 3% do Boleto Antecipado
     E clicar em Finalizar Compra
@@ -36,6 +37,7 @@ Venda de Produto nao configuravel com metodo de pagamento Pix
     Quando pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
+    E clicar para nao utilizar o programa de ponto do parceiro
     E selecionar o metodo de pagamento como Pix
     E verificar o desconto de 3% do Pix
 
@@ -47,6 +49,7 @@ Venda de Produto nao configuravel com metodo de pagamento Cartao de Credito
     Quando pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
+    E clicar para nao utilizar o programa de ponto do parceiro
     E selecionar o metodo de pagamento como Cartao de Credito
     E digitar as informacoes do cartao
     E clicar em Finalizar Compra

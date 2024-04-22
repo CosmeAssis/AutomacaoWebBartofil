@@ -11,7 +11,7 @@ E selecionar o metodo de pagamento como Boleto Antecipado
     # Aguadar exibir o metodo de pagamento Boleto Antecipado
     Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    3s
     # Scroll ate o metodo de pagamento Boleto Antecipado
-    Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
+    Scroll Element Into View    //address[@class='getnetboleto instruction address']
     Sleep    3
 
 E verificar o desconto de 3% do Boleto Antecipado
@@ -37,7 +37,7 @@ E verificar o desconto de 3% do Boleto Antecipado
     Page Should Contain   ${VALOR_PEDIDO_CALCULADO}
 
 E clicar em Finalizar Compra
-    Sleep    3
+    Sleep    5
     # Scroll ate o botao Finalizar Compra na PDP
     Scroll Element Into View        ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
     # Clicar no botao Finalizar Compra na PDP
@@ -86,6 +86,10 @@ E selecionar o metodo de pagamento como Cartao de Credito
     # Clicar no metodo de pagamento Cartao de Credito
     Click Element    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
     Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    3s
+
+E clicar para nao utilizar o programa de ponto do parceiro
+    Wait Until Element Is Visible    //input[@data-bind='click: removeRewardPoints']
+    Click Element    //input[@data-bind='click: removeRewardPoints']   
 
 E digitar as informacoes do cartao
     # Inserir o numero do cartao de credito
