@@ -25,7 +25,7 @@ Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     E clicar para nao utilizar o programa de ponto do parceiro
     E selecionar o metodo de pagamento como Boleto Antecipado
     E verificar o desconto de 3% do Boleto Antecipado
-    E clicar em Finalizar Compra
+    E clicar em Finalizar Compra com Boleto Antecipado
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
 
 Venda de Produto nao configuravel com metodo de pagamento Pix
