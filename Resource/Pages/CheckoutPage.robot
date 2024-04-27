@@ -11,7 +11,7 @@ E selecionar o metodo de pagamento como Boleto Antecipado
     # Aguadar exibir o metodo de pagamento Boleto Antecipado
     Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    3s
     # Scroll ate o metodo de pagamento Boleto Antecipado
-    Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
+    Scroll Element Into View    //div[@class='payment-method-title field choice'][contains(.,'Boleto Antecipado - 3% de desconto')]
     Sleep    3
 
 E verificar o desconto de 3% do Boleto Antecipado
@@ -32,16 +32,21 @@ E verificar o desconto de 3% do Boleto Antecipado
     ${VALOR_PEDIDO_CALCULADO}    Replace String    ${VALOR_PEDIDO_CALCULADO}    .    ,
     # Clicar no metodo de Pagamento Boleto Antecipado
     Click Button    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
+    Scroll Element Into View    (//div[contains(@class,'actions-toolbar')])[11]
     Sleep    3
     # Verificar que o calculo de 3% foi aplicado com sucesso
     Page Should Contain   ${VALOR_PEDIDO_CALCULADO}
 
 E clicar em Finalizar Compra
-    Sleep    3
+    Sleep    5
     # Scroll ate o botao Finalizar Compra na PDP
     Scroll Element Into View        ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
     # Clicar no botao Finalizar Compra na PDP
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
+
+E clicar em Finalizar Compra com Boleto Antecipado
+    Sleep    5
+    Click Button    (//button[contains(@class,'action primary checkout')])[3]
 
 Entao mensagem ${CHECKOUT_MENSAGEM_PEDIDOREALIZADO} é exibida
     Sleep    3
@@ -86,6 +91,11 @@ E selecionar o metodo de pagamento como Cartao de Credito
     # Clicar no metodo de pagamento Cartao de Credito
     Click Element    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
     Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    3s
+
+E clicar para nao utilizar o programa de ponto do parceiro
+    Wait Until Element Is Visible    //input[@data-bind='click: removeRewardPoints']    3s
+    Click Element    //input[@data-bind='click: removeRewardPoints']   
+    Wait Until Element Is Visible    //div[@data-ui-id='checkout-cart-validationmessages-message-success'][contains(.,'You removed the reward points from this order.')]    3s
 
 E digitar as informacoes do cartao
     # Inserir o numero do cartao de credito
