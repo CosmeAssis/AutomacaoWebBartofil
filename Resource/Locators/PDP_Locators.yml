@@ -1,9 +1,18 @@
-PDP_IMAGE_PDP: //img[contains(@class,'fotorama__img')]
-PDP_PAGETITLE_PRODUTO: //span[contains(@class,'base')]
+# ELEMENTOS ITEMPROP
 PDP_ITEMPROP_SKUPRODUTO: (//div[contains(@itemprop,'sku')])[2]
+
+# ELEMENTOS BUTTON
 PDP_BUTTON_ADDCARRINHO: product-addtocart-button
 PDP_BUTTON_VERCARRINHO: //button[contains(@title,'Ver Carrinho')]
 PDP_BUTTON_FECHARPEDIDO:  //span[contains(.,'Fechar Pedido')]
+PDP_BUTTON_ADICIONAR_QUANTIDADE_PRODUTO:  //button[@class='increment']
+
+# ELEMENTOS IMAGE
+PDP_IMAGE_PDP: //img[contains(@class,'fotorama__img')]
+
+# ELEMENTOS LABEL
 PDP_LABEL_DESCPRODUTO: //div[@class='page-main-description product-full-width-section']
 PDP_LABEL_NOMEPRODUTO:  //span[contains(@itemprop,'name')]
-PDP_BUTTON_ADICIONAR_QUANTIDADE_PRODUTO:  //button[@class='increment']
+
+# ELEMENTOS PAGE TITLE
+PDP_PAGETITLE_PRODUTO: //span[contains(@class,'base')]
