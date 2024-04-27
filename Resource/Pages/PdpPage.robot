@@ -43,4 +43,4 @@ E adicionar o produto no carrinho
     Wait Until Element Is Visible    ${CHECKOUT_BUTTON_NEXTSTEP}
     Sleep    5
     Click Element    ${CHECKOUT_BUTTON_NEXTSTEP}
-    Wait Until Element Is Enabled    //input[@data-bind='click: removeRewardPoints']   
+    Wait Until Element Is Enabled    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   
