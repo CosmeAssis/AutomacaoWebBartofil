@@ -13,7 +13,7 @@ Documentation    TESTE AUTOMATIZADO PARA VALIDAR O FLUXO DE VENDA NO PORTAL DA B
 
 *** Test Cases ***
 
-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
+CN0001-Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     [Tags]    BoletoAntecipado
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento. 
     ...    Esta sendo validado o desconto de 3% com sucesso e a conclusao do pedido para pagamento.
@@ -28,7 +28,7 @@ Venda de Produto nao configuravel com metodo de pagamento Boleto Antecipado
     E clicar em Finalizar Compra com Boleto Antecipado
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
 
-Venda de Produto nao configuravel com metodo de pagamento Pix
+CN0002-Venda de Produto nao configuravel com metodo de pagamento Pix
     [Tags]    PedidoMetodoPix
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Pix, onde o teste foi encerrado na validacao do desconto de 3%. 
     ...    Porque esta retornando erro no servidor da getnet devido a falta da instituicao finaceira nao esta configurada
@@ -41,7 +41,7 @@ Venda de Produto nao configuravel com metodo de pagamento Pix
     E selecionar o metodo de pagamento como Pix
     E verificar o desconto de 3% do Pix
 
-Venda de Produto nao configuravel com metodo de pagamento Cartao de Credito
+CN0003-Venda de Produto nao configuravel com metodo de pagamento Cartao de Credito
     [Tags]    VendaCartaoCredito
     [Documentation]    Realizada a venda de um produto nao configuravel com metodo de pagamento Cartao de Credito.
     Dado que acesso o site do parceiro Bartofil
