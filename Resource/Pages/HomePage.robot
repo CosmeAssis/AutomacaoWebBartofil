@@ -4,7 +4,7 @@ Variables   ../Locators/Home_Locators.yml
 Variables   ../Data/Login.yml
 
 *** Keywords ***
-Dado que acesso o site do parceiro Bartofil
+Dado que estou na página inicial do site www.bartofil.com.br
     # Acesso ao site do Bartofil B2B
     Go To    ${URL_BARTOFIL_B2B}
     # Clicar no botao Permitir Cookies apos acessar o site
