@@ -11,7 +11,7 @@ Dado que estou na página inicial do site www.bartofil.com.br
     Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
     
-Quando clicar em Olá! Entre ou cadastra-se 
+Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
     # Aguardar esperar aparecer o modal do login
@@ -65,3 +65,6 @@ Quando pesquisar o produto com SKU ${SKU}
     Sleep    3
     # Clicar no produto apresentado na busca de produto
     Click Element    ${HOME_GRID_RESULTADOPRODUTO}
+
+E clicar em Cadastrar
+    Click Element    //a[contains(.,'Cadastrar')]
