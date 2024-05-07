@@ -67,4 +67,4 @@ Quando pesquisar o produto com SKU ${SKU}
     Click Element    ${HOME_GRID_RESULTADOPRODUTO}
 
 E clicar em Cadastrar
-    Click Element    //a[contains(.,'Cadastrar')]
+    Click Element    ${HOME_BUTTON_CADASTRAR}

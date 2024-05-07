@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Resource/Utils/OpenBrowser.robot
 Resource    ../Resource/Pages/HomePage.robot
+Resource    ../Resource/Pages/CriarContaPage.robot
 ##Execução antes de iniciar o teste
 Test Setup       Abrir o navegador
 ##Execução após execução do teste
