@@ -5,3 +5,4 @@ Variables    ../Locators/NovaEmpresa_Locators.yml
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
+    Input Text    ${NOVAEMPRESA_INPUT_APELIDO}    Cosme
