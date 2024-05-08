@@ -1,8 +1,8 @@
 *** Settings ***
 Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
-Variables    ../Locators/NovaEmpresa_Locators.yml
+Resource    ../Utils/GerarDadosFake.robot
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
-    Input Text    ${NOVAEMPRESA_INPUT_APELIDO}    Cosme
+    Gerar Dados Fake Cadastro do Cadastro
