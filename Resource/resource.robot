@@ -2,4 +2,4 @@
 Library           SeleniumLibrary
 Library          String
 Library    OperatingSystem
-Library    FakerLibrary
+Library         FakerLibrary    locale=pt_BR
