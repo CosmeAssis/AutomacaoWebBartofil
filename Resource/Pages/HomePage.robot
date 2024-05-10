@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
 Variables   ../Locators/Home_Locators.yml
-Variables   ../Data/Login.yml
+Variables   ../Data/LoginInputText.yml
 
 *** Keywords ***
 Dado que estou na página inicial do site www.bartofil.com.br

@@ -8,7 +8,6 @@ ${NOME_FAKE}    ${EMPTY}
 *** Keywords ***
 Gerar Dados Fake Cadastro do Cadastro
     ${NOME_FAKE}    FakerLibrary.Name
-    ${CNPJ_FALE}    FakerLibrary.
 
     Input Text    ${NOVAEMPRESA_INPUT_APELIDO}    ${NOME_FAKE}
 
