@@ -18,6 +18,6 @@ Cenário 1: Realizar cadastro de cliente Pessoa Juridica com sucesso no B2B
     E verificar que está selecionado a opcao Pessoa Juridica
     E clicar em Proxima Etapa
     E preencher as informacoes de cadastro com sucesso
-    #E clicar em Aceito receber informações de acordo com a Politica de Segurança
-    #E clicar em Criar Conta
-    #Entao mensagem Conta criada com sucesso! é exibida
+    E clicar em Aceito receber informações de acordo com a Politica de Segurança
+    E clicar em Criar Conta
+    Entao mensagem Conta criada com sucesso! é exibida
