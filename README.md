@@ -10,7 +10,7 @@ PASSWORD:
 CNPJ_EMPRESA_EM_APROVACAO: 
 PASSWORD_INVALIDO:
 ```
-#### Criar o arquivo CriarContaInputText.yml dentro da pasta Data com as variaveis:
+#### Criar o arquivo NovaEmpresaInputText.yml dentro da pasta Data com as variaveis:
 ```
 CRIARCONTA_CNPJ_VALIDO:
 ```

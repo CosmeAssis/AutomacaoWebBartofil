@@ -1,2 +1,11 @@
 #INPUT
 NOVAEMPRESA_INPUT_APELIDO:  //input[@name='company[nickname]']
+NOVAEMPRESA_INPUT_CNPJ: //input[contains(@title,'CNPJ')]
+NOVAEMPRESA_INPUT_COMPANYEMAIL: //input[contains(@name,'company[company_email]')]
+NOVAEMPRESA_INPUT_CUSTOMEREMAIL:  //input[@name='customer[email]']
+NOVAEMPRESA_INPUT_FIRSTNAME:  //input[contains(@name,'customer[firstname]')]
+NOVAEMPRESA_INPUT_LASTNAME: //input[contains(@name,'customer[lastname]')]
+NOVAEMPRESA_INPUT_WHATSAPP: //input[contains(@name,'company[whatsapp_number]')]
+NOVAEMPRESA_INPUT_PASSWORD: //input[contains(@data-password-min-length,'6')]
+NOVAEMPRESA_INPUT_PASSWORDCONFIRMATION: //input[contains(@name,'password_confirmation')]
+NOVAEMPRESA_INPUT_COMPANYNAME:  //input[contains(@name,'company[legal_name]')]
