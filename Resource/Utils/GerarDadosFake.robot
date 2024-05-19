@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../Resource.robot
-Variables    ../Locators/NovaEmpresa_Locators.yml
+Variables    ../Locators/NovaEmpresaLocators.yml
 Variables    ../Data/NovaEmpresaInputText.yml
 
 *** Variables ***

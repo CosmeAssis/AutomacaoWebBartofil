@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/PDP_Locators.yml
-Variables   ../Locators/Checkout_Locators.yml
+Variables   ../Locators/PDPLocators.yml
+Variables   ../Locators/CheckoutLocators.yml
 Resource    ../Resource.robot
 
 *** Variables ***

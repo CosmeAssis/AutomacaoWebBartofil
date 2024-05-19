@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
-Variables    ../Locators/CriarConta_Locators.yml
+Variables    ../Locators/CriarContaLocators.yml
 
 *** Keywords ***
 E verificar que está selecionado a opcao Pessoa Juridica

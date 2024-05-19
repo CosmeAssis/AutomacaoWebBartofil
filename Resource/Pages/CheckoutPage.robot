@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/Checkout_Locators.yml
+Variables   ../Locators/CheckoutLocators.yml
 Variables    ../Data/CheckoutInputText.yml
 
 *** Keywords ***
