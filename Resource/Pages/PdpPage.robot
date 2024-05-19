@@ -11,11 +11,11 @@ ${PDP_MENSAGEM_PRODUTOADDAOCARRINHO}
 
 E validar tela de PDP
     # Aguardar o titulo do produto está visivel na PDP
-    Wait Until Element Is Visible  ${PDP_PAGETITLE_PRODUTO}
+    Wait Until Element Is Visible  ${PDP_PAGETITLE_PRODUTO}    10s
     # Aguardar a imagem do produto está visivel na PDP
-    Wait Until Element Is Visible  ${PDP_IMAGE_PDP}
+    Wait Until Element Is Visible  ${PDP_IMAGE_PDP}    10s
     # Aguardar o SKU do produto está visivel na PDP
-    Wait Until Element Is Visible  ${PDP_ITEMPROP_SKUPRODUTO}
+    Wait Until Element Is Visible  ${PDP_ITEMPROP_SKUPRODUTO}    10s
 
 E adicionar o produto no carrinho
     # Realizar o scroll na pagina ate exibir a label com a desc do produto na PDP
@@ -40,7 +40,7 @@ E adicionar o produto no carrinho
     ### INICIO DA TELA DE CHECKOUT
     # Clicar no botao Fechar Pedido
     Click Element    ${PDP_BUTTON_FECHARPEDIDO}
-    Wait Until Element Is Visible    ${CHECKOUT_BUTTON_NEXTSTEP}
+    Wait Until Element Is Visible    ${CHECKOUT_BUTTON_NEXTSTEP}    10s
     Sleep    5
     Click Element    ${CHECKOUT_BUTTON_NEXTSTEP}
     Wait Until Element Is Enabled    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   

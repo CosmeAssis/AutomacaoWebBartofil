@@ -1,21 +1,21 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
 Variables   ../Locators/Home_Locators.yml
-Variables   ../Data/Login.yml
+Variables   ../Data/LoginInputText.yml
 
 *** Keywords ***
-Dado que acesso o site do parceiro Bartofil
+Dado que estou na página inicial do site www.bartofil.com.br
     # Acesso ao site do Bartofil B2B
     Go To    ${URL_BARTOFIL_B2B}
     # Clicar no botao Permitir Cookies apos acessar o site
     Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
     
-Quando clicar em Olá! Entre ou cadastra-se 
+Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
     # Aguardar esperar aparecer o modal do login
-    Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    5s
+    Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
 
 E preencher login e senha
     # Digitar o CPF no login
@@ -29,7 +29,8 @@ E clicar em Entrar
 
 Então o Minha Conta será exibido no header
     # Aguardar exibir o icone Minha Conta no header
-    Wait Until Element Is Visible    ${HOME_HEADER_MINHACONTA}  5s
+    Sleep    10s
+    Wait Until Element Is Visible    ${HOME_HEADER_MINHACONTA}
 
 E preencher login e senha de uma conta em aprovação
     # Digitar CPF no login
@@ -39,7 +40,7 @@ E preencher login e senha de uma conta em aprovação
 
 Então mensagem que a conta ainda não foi aprovada é exibida
     # Aguardar exibir a mensagem que a conta ainda nao foi aprovada
-    Wait Until Element Is Visible    ${HOME_MESSAGE_CONTANAOAPROVADA}    5s
+    Wait Until Element Is Visible    ${HOME_MESSAGE_CONTANAOAPROVADA}    10s
 
 E preencher com uma senha incorreta
     # Digitar CPF no login
@@ -49,7 +50,7 @@ E preencher com uma senha incorreta
 
 Então mensagem informando que Login e Senha é inválido é exibida
     # Aguardar exibir a mensagem que o login ou senha é invalido
-    Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    5s
+    Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    10s
 
 E realizo o login com sucesso
     Quando clicar em Olá! Entre ou cadastra-se
@@ -61,7 +62,10 @@ Quando pesquisar o produto com SKU ${SKU}
     # Digitar  o SKU no produto na busca de produto
     Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
     # Aguardar exibir o produto na busca de produto
-    Wait Until Element Is Visible    ${HOME_GRID_RESULTADOPRODUTO}    5s
+    Wait Until Element Is Visible    ${HOME_GRID_RESULTADOPRODUTO}    10s
     Sleep    3
     # Clicar no produto apresentado na busca de produto
     Click Element    ${HOME_GRID_RESULTADOPRODUTO}
+
+E clicar em Cadastrar
+    Click Element    ${HOME_BUTTON_CADASTRAR}

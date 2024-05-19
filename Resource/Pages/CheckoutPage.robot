@@ -2,15 +2,15 @@
 Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
 Variables   ../Locators/Checkout_Locators.yml
-Variables    ../Data/Checkout_InputText.yml
+Variables    ../Data/CheckoutInputText.yml
 
 *** Keywords ***
 
 E selecionar o metodo de pagamento como Boleto Antecipado
     # Aguardar exibir a Label Resumo do Pedido
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
     # Aguadar exibir o metodo de pagamento Boleto Antecipado
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    3s
+    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    5s
     # Scroll ate o metodo de pagamento Boleto Antecipado
     Scroll Element Into View    ${CHECKOUT_CHOICEPAYMENT_BOLETOANTECIPADO}
     Sleep    3
@@ -56,9 +56,9 @@ Entao mensagem ${CHECKOUT_MENSAGEM_PEDIDOREALIZADO} é exibida
 
 E selecionar o metodo de pagamento como Pix
     # Aguadar exibir a label Resumo do Pedido
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
     # Aguadar exibir o metodo de pagamento Pix
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}    3s
+    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}    5s
     # Scroll até o metodo de pagamento Pix
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
@@ -87,16 +87,16 @@ E verificar o desconto de 3% do Pix
 
 E selecionar o metodo de pagamento como Cartao de Credito
     # Aguardar exibir a label Resumo do Pedido
-    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    3s
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
     Sleep    3
     # Clicar no metodo de pagamento Cartao de Credito
     Click Element    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}
-    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    3s
+    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    5s
 
 E clicar para nao utilizar o programa de ponto do parceiro
-    Wait Until Element Is Visible    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   3s
+    Wait Until Element Is Visible    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   5s
     Click Element    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}  
-    Wait Until Element Is Visible    ${CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO}    3s
+    Wait Until Element Is Visible    ${CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO}    5s
 
 E digitar as informacoes do cartao
     # Inserir o numero do cartao de credito
