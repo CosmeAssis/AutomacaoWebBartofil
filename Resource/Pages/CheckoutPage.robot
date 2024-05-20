@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/Checkout_Locators.yml
+Variables   ../Locators/CheckoutLocators.yml
 Variables    ../Data/CheckoutInputText.yml
 
 *** Keywords ***
@@ -63,7 +63,7 @@ E selecionar o metodo de pagamento como Pix
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
     
-E verificar o desconto de 3% do Pix
+Entao o desconto de 3% do Pix é verificado
     # Variavel para armazenar o Valor do Produto
     ${VALOR_ORIGINAL_PRODUTO}   Get Text    ${CHECKOUT_PRICE_VALORTOTALPEDIDO}
     # Remover "R$"
@@ -84,6 +84,7 @@ E verificar o desconto de 3% do Pix
     Sleep    3
     # Verificar que o calculo de 3% foi aplicado com sucesso
     Page Should Contain   ${VALOR_PEDIDO_CALCULADO}
+    Limpar Carrinho a partir do checkout
 
 E selecionar o metodo de pagamento como Cartao de Credito
     # Aguardar exibir a label Resumo do Pedido
@@ -114,3 +115,9 @@ E digitar as informacoes do cartao
     Input Text    ${CHECKOUT_INPUT_NOMETITULARCARTAO}    ${CHECKOUT_NOMECLIENTE}
     Click Element    ${CHECKOUT_DROPLIST_PARCELAMENTO}
     Click Element    ${CHECKOUT_DROPLIST_OPCAOPARCELAMENTO}
+
+Limpar Carrinho a partir do checkout
+    Go To    https://mcstaging.bartofil.com.br/checkout/cart/
+    Scroll Element Into View    ${CHECKOUT_BUTTON_EXCLUIRSELECIONADOS}
+    Click Element    //span[contains(.,'Selecionar tudo')]
+    Click Element    ${CHECKOUT_BUTTON_EXCLUIRSELECIONADOS}

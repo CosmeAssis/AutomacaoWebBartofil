@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/Home_Locators.yml
+Variables   ../Locators/HomeLocators.yml
 Variables   ../Data/LoginInputText.yml
 
 *** Keywords ***

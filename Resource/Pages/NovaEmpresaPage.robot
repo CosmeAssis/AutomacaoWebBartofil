@@ -3,11 +3,7 @@ Resource    ../Resource.robot
 Resource    ../Utils/OpenBrowser.robot
 Resource    ../Utils/GerarDadosFake.robot
 Variables    ../Data/NovaEmpresaInputText.yml
-Variables    ../Locators/NovaEmpresa_Locators.yml
-
-*** Variables ***
-${URL}    https://mcstaging.bartofil.com.br/rest/all/V1/customers/search?searchCriteria[filter_groups][0][filters][0][field]=taxvat&searchCriteria[filter_groups][0][filters][0][value]=04746914000157
-
+Variables    ../Locators/NovaEmpresaLocators.yml
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso

@@ -53,4 +53,4 @@ Cenário 3: Venda de Produto nao configuravel com metodo de pagamento Pix
     E adicionar o produto no carrinho
     E clicar para nao utilizar o programa de ponto do parceiro
     E selecionar o metodo de pagamento como Pix
-    E verificar o desconto de 3% do Pix
+    Entao o desconto de 3% do Pix é verificado

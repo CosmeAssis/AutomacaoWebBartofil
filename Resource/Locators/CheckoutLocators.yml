@@ -6,6 +6,7 @@ CHECKOUT_BUTTON_CONTINUAR:  //button[@class='action primary checkout next-step-t
 CHECKOUT_BUTTON_FINALIZARCOMPRA:  (//button[contains(@class,'action primary checkout')])[1]
 CHECKOUT_BUTTON_NEXTSTEP: //button[@class='action primary checkout next-step-trigger']
 CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETO_ANTECIPADO: (//button[contains(@class,'action primary checkout')])[3]
+CHECKOUT_BUTTON_EXCLUIRSELECIONADOS:  //button[contains(@value,'delete_items')]
 
 # ELEMENTOS RADIOBUTTON
 CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO:  //input[contains(@value,'getnet_paymentmagento_boleto')]
