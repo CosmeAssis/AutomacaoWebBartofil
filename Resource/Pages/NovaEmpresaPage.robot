@@ -7,18 +7,20 @@ Variables    ../Locators/NovaEmpresaLocators.yml
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
-    Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
-    Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${NOVAEMPRESA_CNPJ_VALIDO}
-    Wait Until Element Is Visible    ${NOVAEMPRESA_INPUT_COMPANYNAME}    5s
+    #Utilizando a keyword Gerar Dados Fake Cadastro com Sucesso
     Gerar Dados Fake Cadastro com Sucesso
+    # Aguardar exibir o elemento Razao Social
+    Wait Until Element Is Visible    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}    5s
 
 E clicar em Aceito receber informações de acordo com a Politica de Segurança
+    # Clicar no Checkbox do LGPD
     Click Element    ${NOVAEMPRESA_CHECKBOX_LGPD}       
 
 E clicar em Criar Conta
+    #Clicar no botao Criar Conta
     Click Element    ${NOVAEMPRESA_BUTTON_CRIARCONTA}
 
 Entao mensagem ${NOVAEMPRESA_MENSAGEM_CONTACRIADA_SUCESSO} é exibida
     Sleep    3
-    # Aguardar exibir do pedido realizado com sucesso
+    # Aguardar exibir mensagem de conta criada com sucesso
     Wait Until Page Contains    ${NOVAEMPRESA_MENSAGEM_CONTACRIADA_SUCESSO}
