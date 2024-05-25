@@ -8,10 +8,11 @@ NOVAEMPRESA_INPUT_LASTNAME: //input[contains(@name,'customer[lastname]')]
 NOVAEMPRESA_INPUT_WHATSAPP: //input[contains(@name,'company[whatsapp_number]')]
 NOVAEMPRESA_INPUT_PASSWORD: //input[contains(@data-password-min-length,'6')]
 NOVAEMPRESA_INPUT_PASSWORDCONFIRMATION: //input[contains(@name,'password_confirmation')]
-NOVAEMPRESA_INPUT_COMPANYNAME:  //input[contains(@name,'company[legal_name]')]
+NOVAEMPRESA_INPUT_RAZAOSOCIAL:  //input[contains(@name,'company[legal_name]')]
+NOVAEMPRESA_INPUT_NOMEFANTASIA: //input[contains(@name,'company[company_name]')]
 
 #CHECKBOX
 NOVAEMPRESA_CHECKBOX_LGPD:  //input[contains(@id,'checkbox-lgpd')]
 
 #BUTTON
-NOVAEMPRESA_BUTTON_CRIARCONTA:  //button[contains(@title,'Criar Conta')]
+NOVAEMPRESA_BUTTON_CRIARCONTA:  //button[@type='submit'][contains(@id,'account')][contains(.,'Criar Conta')]
