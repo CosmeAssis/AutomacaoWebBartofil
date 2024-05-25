@@ -2,6 +2,7 @@
 Resource          ../Resource.robot
 Variables    ../Locators/NovaEmpresaLocators.yml
 Variables    ../Data/NovaEmpresaInputText.yml
+Library    CustomLibrary.py
 
 *** Variables ***
 ${NOME_FAKE}    ${EMPTY}
@@ -11,7 +12,7 @@ ${CAMPO_ERRO_CNPJ}    CNPJ inválido
 *** Keywords ***
 Gerar Dados Fake Cadastro com Sucesso
     FOR    ${i}    IN RANGE    ${MAX_TENTATIVAS}
-    ${CNPJ_FAKE}        FakerLibrary.Cnpj
+    ${CNPJ_FAKE}        Generate Valid Cnpj
     
     # Insere o CNPJ no campo correspondente
     Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}

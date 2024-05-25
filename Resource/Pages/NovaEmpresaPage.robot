@@ -24,5 +24,4 @@ E clicar em Criar Conta
     Click Element    ${NOVAEMPRESA_BUTTON_CRIARCONTA}
 
 Entao mensagem ${NOVAEMPRESA_MENSAGEM_CONTACRIADA_SUCESSO} é exibida
-    ${URL_ACESSADA} =    Get Location
-    Should Be Equal As Strings    ${URL_ACESSADA}    ${URL_ESPERADA_CADASTRO_SUCESSO}
+    Wait Until Page Contains   ${URL_ESPERADA_CADASTRO_SUCESSO}    10s
