@@ -10,28 +10,26 @@ ${CAMPO_ERRO_CNPJ}    CNPJ inválido
 
 *** Keywords ***
 Gerar Dados Fake Cadastro com Sucesso
-     # Loop que tenta inserir o CNPJ até o número máximo de tentativas
     FOR    ${i}    IN RANGE    ${MAX_TENTATIVAS}
-        ${CNPJ_FAKE}        FakerLibrary.Cnpj
-        
-        # Insere o CNPJ no campo correspondente
-        Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
-        Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
-        Click Element    //strong[contains(.,'Preencha o CNPJ para confirmação dos Dados')]
-        # Aguarda 5 segundo para permitir que a página processe a busca
-        Sleep    5s
-        # Obtém o valor do campo "Razão Social"
-        ${razao_social}    Get Value    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
-        # Obtém o valor do campo "Nome Fantasia"
-        ${nome_fantasia}    Get Value    ${NOVAEMPRESA_INPUT_NOMEFANTASIA}
-        # Verifica se ambos os campos estão preenchidos
-        Run Keyword If    '${razao_social}' != '' and '${nome_fantasia}' != ''    Log    Campos preenchidos corretamente na tentativa ${i+1}
-        Preencher demais campos do cadastro
-        # Se ambos os campos estiverem preenchidos, encerra a execução da palavra-chave
-        Run Keyword If    '${razao_social}' != '' and '${nome_fantasia}' != ''    Return From Keyword
-        # Loga uma mensagem informando que os campos ainda não foram preenchidos
-        Log    Tentativa ${i+1}: Campos ainda não preenchidos
+    ${CNPJ_FAKE}        FakerLibrary.Cnpj
+    
+    # Insere o CNPJ no campo correspondente
+    Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
+    Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
+    Click Element    //strong[contains(.,'Preencha o CNPJ para confirmação dos Dados')]
+    # Aguarda 5 segundos para permitir que a página processe a busca
+    Sleep    5s
+    # Obtém o valor do campo "Razão Social"
+    ${razao_social}    Get Value    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
+    # Obtém o valor do campo "Nome Fantasia"
+    ${nome_fantasia}    Get Value    ${NOVAEMPRESA_INPUT_NOMEFANTASIA}
+    # Verifica se ambos os campos estão preenchidos corretamente
+    Run Keyword If    '${razao_social}' != '' and '${nome_fantasia}' != ''
+    ...    Exit For Loop
+    ...    ELSE IF    ${i+1} == ${MAX_TENTATIVAS}
+    ...    Log    Tentativas esgotadas. Não foi possível preencher os campos.
     END
+    Preencher demais campos do cadastro
 
 Preencher demais campos do cadastro
     ${FIRSTNAME_FAKE}    FakerLibrary.First Name
