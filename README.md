@@ -14,3 +14,7 @@ PASSWORD_INVALIDO:
 ```
 CRIARCONTA_CNPJ_VALIDO:
 ```
+### Para usar a biblioteca para gerar CNPJ valido rodar o comando abaixo:
+```
+pip install Faker br-cpf-cnpj
+```

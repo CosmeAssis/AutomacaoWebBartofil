@@ -47,6 +47,7 @@ E clicar em Finalizar Compra
 
 E clicar em Finalizar Compra com Boleto Antecipado
     Sleep    5
+    # Clicar no botao Finalizar Compra
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETO_ANTECIPADO}
 
 Entao mensagem ${CHECKOUT_MENSAGEM_PEDIDOREALIZADO} é exibida
@@ -95,8 +96,11 @@ E selecionar o metodo de pagamento como Cartao de Credito
     Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_CARTAOCREDITO}    5s
 
 E clicar para nao utilizar o programa de ponto do parceiro
+    # Aguardar aparecer a opcao para remover os pontos do parceiro na compra
     Wait Until Element Is Visible    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   5s
+    # Clicar no databind para nao usar os pontos do parceiro na compra
     Click Element    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}  
+    # Aguardar aparecer mensagem informando que os pontos do parceiro foi retirado para a compra
     Wait Until Element Is Visible    ${CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO}    5s
 
 E digitar as informacoes do cartao
@@ -117,7 +121,11 @@ E digitar as informacoes do cartao
     Click Element    ${CHECKOUT_DROPLIST_OPCAOPARCELAMENTO}
 
 Limpar Carrinho a partir do checkout
+    # Acessar a url do carrinho
     Go To    https://mcstaging.bartofil.com.br/checkout/cart/
+    # Fazer o scroll na pagina ate o botao Excluir Selecionados
     Scroll Element Into View    ${CHECKOUT_BUTTON_EXCLUIRSELECIONADOS}
+    # Clicar no botao selecionar tudo
     Click Element    //span[contains(.,'Selecionar tudo')]
+    # Clicar no botao excluir selecionados
     Click Element    ${CHECKOUT_BUTTON_EXCLUIRSELECIONADOS}
