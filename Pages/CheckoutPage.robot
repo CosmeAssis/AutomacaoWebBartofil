@@ -1,32 +1,32 @@
 *** Settings ***
-Resource    ../Resource.robot
-Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/CheckoutLocators.yml
-Variables    ../Data/CheckoutInputText.yml
+Resource        ../Utils/Resource.robot
+Resource        ../Utils/OpenBrowser.robot
+Variables       ../Locators/CheckoutLocators.yml
+Variables       ../Data/CheckoutInputText.yml
+
 
 *** Keywords ***
-
 E selecionar o metodo de pagamento como Boleto Antecipado
     # Aguardar exibir a Label Resumo do Pedido
     Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
     # Aguadar exibir o metodo de pagamento Boleto Antecipado
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    5s
+    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}    5s
     # Scroll ate o metodo de pagamento Boleto Antecipado
     Scroll Element Into View    ${CHECKOUT_CHOICEPAYMENT_BOLETOANTECIPADO}
     Sleep    3
 
 E verificar o desconto de 3% do Boleto Antecipado
     # Variavel para armazenar o Valor do Produto
-    ${VALOR_ORIGINAL_PRODUTO}   Get Text    ${CHECKOUT_PRICE_VALORTOTALPEDIDO}
+    ${VALOR_ORIGINAL_PRODUTO}    Get Text    ${CHECKOUT_PRICE_VALORTOTALPEDIDO}
     # Remover "R$"
-    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    R$    ${EMPTY} 
+    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    R$    ${EMPTY}
     # Substituir "," por "."
-    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    ,    .       
+    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    ,    .
     ${PERCENTUAL_DESCONTO}    Set Variable    0.03
-    # Calcular e arrendorar o resultado para duas casas decimais  
+    # Calcular e arrendorar o resultado para duas casas decimais
     ${DESCONTO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} * ${PERCENTUAL_DESCONTO},2)
-    # Calcular e arrendorar o resultado para duas casas decimais 
-    ${VALOR_PEDIDO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} - ${DESCONTO_CALCULADO},2)    
+    # Calcular e arrendorar o resultado para duas casas decimais
+    ${VALOR_PEDIDO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} - ${DESCONTO_CALCULADO},2)
     # Converter o valor numerico em String
     ${VALOR_PEDIDO_CALCULADO}    Convert To String    ${VALOR_PEDIDO_CALCULADO}
     # Substituir "," por "."
@@ -36,12 +36,12 @@ E verificar o desconto de 3% do Boleto Antecipado
     Scroll Element Into View    ${CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO}
     Sleep    3
     # Verificar que o calculo de 3% foi aplicado com sucesso
-    Page Should Contain   ${VALOR_PEDIDO_CALCULADO}
+    Page Should Contain    ${VALOR_PEDIDO_CALCULADO}
 
 E clicar em Finalizar Compra
     Sleep    5
     # Scroll ate o botao Finalizar Compra na PDP
-    Scroll Element Into View        ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
+    Scroll Element Into View    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
     # Clicar no botao Finalizar Compra na PDP
     Click Button    ${CHECKOUT_BUTTON_FINALIZARCOMPRA}
 
@@ -59,23 +59,23 @@ E selecionar o metodo de pagamento como Pix
     # Aguadar exibir a label Resumo do Pedido
     Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
     # Aguadar exibir o metodo de pagamento Pix
-    Wait Until Element Is Visible     ${CHECKOUT_RADIOBUTTON_PIX}    5s
+    Wait Until Element Is Visible    ${CHECKOUT_RADIOBUTTON_PIX}    5s
     # Scroll até o metodo de pagamento Pix
     Scroll Element Into View    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
-    
+
 Entao o desconto de 3% do Pix é verificado
     # Variavel para armazenar o Valor do Produto
-    ${VALOR_ORIGINAL_PRODUTO}   Get Text    ${CHECKOUT_PRICE_VALORTOTALPEDIDO}
+    ${VALOR_ORIGINAL_PRODUTO}    Get Text    ${CHECKOUT_PRICE_VALORTOTALPEDIDO}
     # Remover "R$"
-    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    R$    ${EMPTY} 
+    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    R$    ${EMPTY}
     # Substituir "," por "."
-    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    ,    .       
+    ${VALOR_ORIGINAL_PRODUTO}    Replace String    ${VALOR_ORIGINAL_PRODUTO}    ,    .
     ${PERCENTUAL_DESCONTO}    Set Variable    0.03
-    # Calcular e arrendorar o resultado para duas casas decimais  
+    # Calcular e arrendorar o resultado para duas casas decimais
     ${DESCONTO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} * ${PERCENTUAL_DESCONTO},2)
-    # Calcular e arrendorar o resultado para duas casas decimais 
-    ${VALOR_PEDIDO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} - ${DESCONTO_CALCULADO},2)    
+    # Calcular e arrendorar o resultado para duas casas decimais
+    ${VALOR_PEDIDO_CALCULADO}    Evaluate    round(${VALOR_ORIGINAL_PRODUTO} - ${DESCONTO_CALCULADO},2)
     # Converter o valor numerico em String
     ${VALOR_PEDIDO_CALCULADO}    Convert To String    ${VALOR_PEDIDO_CALCULADO}
     # Substituir "," por "."
@@ -84,7 +84,7 @@ Entao o desconto de 3% do Pix é verificado
     Click Button    ${CHECKOUT_RADIOBUTTON_PIX}
     Sleep    3
     # Verificar que o calculo de 3% foi aplicado com sucesso
-    Page Should Contain   ${VALOR_PEDIDO_CALCULADO}
+    Page Should Contain    ${VALOR_PEDIDO_CALCULADO}
     Limpar Carrinho a partir do checkout
 
 E selecionar o metodo de pagamento como Cartao de Credito
@@ -97,9 +97,9 @@ E selecionar o metodo de pagamento como Cartao de Credito
 
 E clicar para nao utilizar o programa de ponto do parceiro
     # Aguardar aparecer a opcao para remover os pontos do parceiro na compra
-    Wait Until Element Is Visible    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}   5s
+    Wait Until Element Is Visible    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}    5s
     # Clicar no databind para nao usar os pontos do parceiro na compra
-    Click Element    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}  
+    Click Element    ${CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO}
     # Aguardar aparecer mensagem informando que os pontos do parceiro foi retirado para a compra
     Wait Until Element Is Visible    ${CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO}    5s
 
@@ -112,7 +112,7 @@ E digitar as informacoes do cartao
     # Clicar no mes de vencimento do cartao de credito
     Click Element    ${CHECKOUT_DROPLIST_MESVENCIMENTO}
     Click Element    ${CHECKOUT_DROPLIST_MESMARCO}
-    # Clicar no ano de vencimento do cartao de credito 
+    # Clicar no ano de vencimento do cartao de credito
     Click Element    ${CHECKOUT_DROPLIST_ANOVENCIMENTO}
     Click Element    ${CHECKOUT_DROPLIST_ANO2030}
     # Digitar nome do cliente do cartao de credito

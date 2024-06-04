@@ -1,0 +1,5 @@
+#INPUT
+CRIARCONTA_INPUT_PESSOAJURIDICA: //input[contains(@title,'Pessoa Jurídica')]
+
+#BUTTON
+CRIARCONTA_BUTTON_PROXIMAETAPA: //button[contains(.,'PRÓXIMA ETAPA')]
