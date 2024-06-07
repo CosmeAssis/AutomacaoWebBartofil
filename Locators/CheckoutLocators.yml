@@ -26,7 +26,7 @@ CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO: (//div[contains(@class,'actions-toolb
 CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO:  "//input[contains(@data-bind,'click: removeRewardPoints')]"
 
 # ELEMENTOS MESSAGE
-CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO:  //div[@data-ui-id='checkout-cart-validationmessages-message-success'][contains(.,'You removed the reward points from this order.')]
+CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO:  //div[contains(@class,'message message-success success')]
 
 # ELEMENTOS INPUT
 CHECKOUT_INPUT_NUMEROCARTAODECREDITO:  //input[contains(@data-container,'cc-cc-number')]

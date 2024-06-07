@@ -1,4 +1,4 @@
 Results/
-Resource/Data/LoginInputText.yml
-Resource/Data/NovaEmpresaInputText.yml
-Resource/Utils/__pycache__
+/Data/LoginInputText.yml
+/Data/NovaEmpresaInputText.yml
+/Utils/__pycache__

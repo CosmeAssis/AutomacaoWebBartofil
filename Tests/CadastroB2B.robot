@@ -1,17 +1,18 @@
 *** Settings ***
-Resource    ../Resource/Utils/OpenBrowser.robot
-Resource    ../Resource/Pages/HomePage.robot
-Resource    ../Resource/Pages/CriarContaPage.robot
-Resource    ../Resource/Pages/NovaEmpresaPage.robot
+Resource            ../Utils/OpenBrowser.robot
+Resource            ../Pages/HomePage.robot
+Resource            ../Pages/CriarContaPage.robot
+Resource            ../Pages/NovaEmpresaPage.robot
+
 ##Execução antes de iniciar o teste
-Test Setup       Abrir o navegador
+Test Setup          Abrir o navegador
 ##Execução após execução do teste
-Test Teardown    Fechar o navegador
+Test Teardown       Fechar o navegador
+
 
 *** Test Cases ***
-
 Cenário 1: Realizar cadastro de cliente Pessoa Juridica com sucesso no B2B
-    [Tags]    CadastroPessoaFisicaSucesso
+    [Tags]    cadastropessoafisicasucesso
     Dado que estou na página inicial do site www.bartofil.com.br
     Quando clicar em Olá! Entre ou cadastra-se
     E clicar em Cadastrar

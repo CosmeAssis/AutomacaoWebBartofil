@@ -1,7 +1,8 @@
 *** Settings ***
-Resource    ../Utils/OpenBrowser.robot
-Variables   ../Locators/HomeLocators.yml
-Variables   ../Data/LoginInputText.yml
+Resource        ../Utils/OpenBrowser.robot
+Variables       ../Locators/HomeLocators.yml
+Variables       ../Data/LoginInputText.yml
+
 
 *** Keywords ***
 Dado que estou na página inicial do site www.bartofil.com.br
@@ -10,7 +11,7 @@ Dado que estou na página inicial do site www.bartofil.com.br
     # Clicar no botao Permitir Cookies apos acessar o site
     Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
-    
+
 Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
@@ -36,7 +37,7 @@ E preencher login e senha de uma conta em aprovação
     # Digitar CPF no login
     Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_EM_APROVACAO}
     # Digitar senha no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}  
+    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
 
 Então mensagem que a conta ainda não foi aprovada é exibida
     # Aguardar exibir a mensagem que a conta ainda nao foi aprovada
@@ -46,7 +47,7 @@ E preencher com uma senha incorreta
     # Digitar CPF no login
     Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
     # Digitar senha incorreta no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD_INVALIDO}    
+    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD_INVALIDO}
 
 Então mensagem informando que Login e Senha é inválido é exibida
     # Aguardar exibir a mensagem que o login ou senha é invalido
@@ -59,7 +60,7 @@ E realizo o login com sucesso
     Então o Minha Conta será exibido no header
 
 Quando pesquisar o produto com SKU ${SKU}
-    # Digitar  o SKU no produto na busca de produto
+    # Digitar    o SKU no produto na busca de produto
     Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
     # Aguardar exibir o produto na busca de produto
     Wait Until Element Is Visible    ${HOME_GRID_RESULTADOPRODUTO}    10s
