@@ -11,27 +11,26 @@ ${MAX_TENTATIVAS}       10
 ${CAMPO_ERRO_CNPJ}      CNPJ inválido
 
 
-*** Keywords ***
+*** Keywords ***   
 Gerar Dados Fake Cadastro com Sucesso
     FOR    ${i}    IN RANGE    ${MAX_TENTATIVAS}
-        ${CNPJ_FAKE}    Generate Valid Cnpj
-
-        # Insere o CNPJ no campo correspondente
-        Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
-        Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
-        Click Element    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
-        # Aguarda 5 segundos para permitir que a página processe a busca
-        Sleep    5s
-        # Obtém o valor do campo "Razão Social"
-        ${razao_social}    Get Value    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
-        # Obtém o valor do campo "Nome Fantasia"
-        ${nome_fantasia}    Get Value    ${NOVAEMPRESA_INPUT_NOMEFANTASIA}
-        # Verifica se ambos os campos estão preenchidos corretamente
-        IF    '${razao_social}' != '' and '${nome_fantasia}' != ''
-            BREAK
-        ELSE IF    ${i+1} == ${MAX_TENTATIVAS}
-            Log    Tentativas esgotadas. Não foi possível preencher os campos.
-        END
+    ${CNPJ_FAKE}        Generate Valid Cnpj
+    
+    # Insere o CNPJ no campo correspondente
+    Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
+    Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
+    Click Element    //input[contains(@name,'company[nickname]')]
+    # Aguarda 5 segundos para permitir que a página processe a busca
+    Sleep    5s
+    # Obtém o valor do campo "Razão Social"
+    ${razao_social}    Get Value    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
+    # Obtém o valor do campo "Nome Fantasia"
+    ${nome_fantasia}    Get Value    ${NOVAEMPRESA_INPUT_NOMEFANTASIA}
+    # Verifica se ambos os campos estão preenchidos corretamente
+    Run Keyword If    '${razao_social}' != '' and '${nome_fantasia}' != ''
+    ...    Exit For Loop
+    ...    ELSE IF    ${i+1} == ${MAX_TENTATIVAS}
+    ...    Log    Tentativas esgotadas. Não foi possível preencher os campos.
     END
     Preencher demais campos do cadastro
 
