@@ -9,7 +9,8 @@ Library         CustomLibrary.py
 ${NOME_FAKE}            ${EMPTY}
 ${MAX_TENTATIVAS}       10
 ${CAMPO_ERRO_CNPJ}      CNPJ inválido
-
+# Define o localizador do elemento de carregamento (loading) usando XPath
+${LOADING_ELEMENT}    xpath=//*[@id="html-body"]/div[1]/div/img
 
 *** Keywords ***   
 Gerar Dados Fake Cadastro com Sucesso
@@ -19,7 +20,12 @@ Gerar Dados Fake Cadastro com Sucesso
     # Insere o CNPJ no campo correspondente
     Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
     Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
-    Click Element    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
+    Click Element    //input[contains(@name,'company[company_email]')]
+    # Espera até que o elemento de carregamento desapareça
+    Wait Until Element Is Not Visible    ${LOADING_ELEMENT}    60s
+    # Executa a palavra-chave personalizada para esperar até que o campo "Razão Social" seja preenchido
+    # Continua o teste mesmo se ela falhar
+     ${result}=    Run Keyword And Ignore Error    Wait Until Element Is Filled    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
     # Aguarda 10 segundos para permitir que a página processe a busca
     Sleep    10s
     # Obtém o valor do campo "Razão Social"
@@ -51,3 +57,19 @@ Preencher demais campos do cadastro
     Input Text    ${NOVAEMPRESA_INPUT_WHATSAPP}    ${WHATSAPP_FAKE}
     Input Text    ${NOVAEMPRESA_INPUT_PASSWORD}    ${PASSWORD_FAKE}
     Input Text    ${NOVAEMPRESA_INPUT_PASSWORDCONFIRMATION}    ${PASSWORD_FAKE}
+
+# Define uma palavra-chave personalizada para esperar até que um elemento seja preenchido
+Wait Until Element Is Filled
+    # Define os argumentos que a palavra-chave aceita
+    [Arguments]    ${locator}
+    # Tenta repetidamente verificar se o campo não está vazio, com 10 tentativas e intervalos de 1 segundo
+    Wait Until Keyword Succeeds    10x    1s    Run Keyword And Return Status    Element Should Not Be Empty    ${locator}
+
+# Define uma palavra-chave personalizada para verificar se um elemento não está vazio
+Element Should Not Be Empty
+    # Define os argumentos que a palavra-chave aceita
+    [Arguments]    ${locator}
+    # Obtém o valor do elemento localizado
+    ${element_value}=    Get Value    ${locator}
+    # Verifica se o valor do elemento não está vazio
+    Should Not Be Empty    ${element_value}
