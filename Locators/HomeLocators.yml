@@ -7,7 +7,7 @@ HOME_HEADER_MINHACONTA: (//a[contains(.,'Minha Conta')])[1]
 # ELEMENTOS BUTTON
 HOME_BUTTON_LOGIN: //button[@class='action login primary']
 HOME_BUTTON_PERMITIRCOOKIES: //button[@class='action allow primary']
-HOME_BUTTON_CADASTRAR:  //a[contains(.,'Cadastrar')]
+HOME_BUTTON_CADASTRAR: //a[contains(.,'Cadastrar')]
 
 # ELEMENTOS INPUT
 HOME_INPUT_BUSCAPRODUTO: //input[@name='q']

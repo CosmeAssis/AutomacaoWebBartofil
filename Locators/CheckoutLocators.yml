@@ -1,20 +1,20 @@
 # ELEMENTOS LABEL
-CHECKOUT_LABEL_RESUMODOPEDIDO:  //span[@class='title desk'][contains(.,'Resumo da Compra')]
+CHECKOUT_LABEL_RESUMODOPEDIDO: //span[@class='title desk'][contains(.,'Resumo da Compra')]
 
 # ELEMENTOS BUTTON
-CHECKOUT_BUTTON_CONTINUAR:  //button[@class='action primary checkout next-step-trigger']
-CHECKOUT_BUTTON_FINALIZARCOMPRA:  (//button[contains(@class,'action primary checkout')])[1]
+CHECKOUT_BUTTON_CONTINUAR: //button[@class='action primary checkout next-step-trigger']
+CHECKOUT_BUTTON_FINALIZARCOMPRA: (//button[contains(@class,'action primary checkout')])[1]
 CHECKOUT_BUTTON_NEXTSTEP: //button[@class='action primary checkout next-step-trigger']
 CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETO_ANTECIPADO: (//button[contains(@class,'action primary checkout')])[3]
-CHECKOUT_BUTTON_EXCLUIRSELECIONADOS:  //button[contains(@value,'delete_items')]
+CHECKOUT_BUTTON_EXCLUIRSELECIONADOS: //button[contains(@value,'delete_items')]
 
 # ELEMENTOS RADIOBUTTON
-CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO:  //input[contains(@value,'getnet_paymentmagento_boleto')]
+CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO: //input[contains(@value,'getnet_paymentmagento_boleto')]
 CHECKOUT_RADIOBUTTON_PIX: getnet_paymentmagento_pix
 CHECKOUT_RADIOBUTTON_CARTAOCREDITO: //input[contains(@value,'getnet_paymentmagento_cc')]
 
 # ELEMENTOS PRICE
-CHECKOUT_PRICE_VALORTOTALPEDIDO:  (//span[contains(@class,'price')])[11]
+CHECKOUT_PRICE_VALORTOTALPEDIDO: (//span[contains(@class,'price')])[11]
 
 # ELEMENTOS CHOICE TITLE
 CHECKOUT_CHOICEPAYMENT_BOLETOANTECIPADO: //div[@class='payment-method-title field choice'][contains(.,'Boleto Antecipado - 3% de desconto')]
@@ -23,20 +23,20 @@ CHECKOUT_CHOICEPAYMENT_BOLETOANTECIPADO: //div[@class='payment-method-title fiel
 CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO: (//div[contains(@class,'actions-toolbar')])[11]
 
 # ELEMENTOS DATA_BIND
-CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO:  "//input[contains(@data-bind,'click: removeRewardPoints')]"
+CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO: "//input[contains(@data-bind,'click: removeRewardPoints')]"
 
 # ELEMENTOS MESSAGE
-CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO:  //div[contains(@class,'message message-success success')]
+CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO: //div[contains(@class,'message message-success success')]
 
 # ELEMENTOS INPUT
-CHECKOUT_INPUT_NUMEROCARTAODECREDITO:  //input[contains(@data-container,'cc-cc-number')]
+CHECKOUT_INPUT_NUMEROCARTAODECREDITO: //input[contains(@data-container,'cc-cc-number')]
 CHECKOUT_INPUT_CVV: //input[contains(@class,'input-text cvv')]
 CHECKOUT_INPUT_NOMETITULARCARTAO: //input[@type='text'][contains(@id,'name')]
 
 # ELEMENTOS DROPLIST
-CHECKOUT_DROPLIST_MESVENCIMENTO:  //select[@name='payment[cc_exp_month]'][contains(@id,'expiration')]
+CHECKOUT_DROPLIST_MESVENCIMENTO: //select[@name='payment[cc_exp_month]'][contains(@id,'expiration')]
 CHECKOUT_DROPLIST_MESMARCO: //option[@value='3'][contains(.,'03 - março')]
 CHECKOUT_DROPLIST_ANOVENCIMENTO: //select[contains(@name,'payment[cc_exp_year]')]
-CHECKOUT_DROPLIST_ANO2030:  //option[@value='2030']
+CHECKOUT_DROPLIST_ANO2030: //option[@value='2030']
 CHECKOUT_DROPLIST_PARCELAMENTO: //select[@name='payment[cc_installments]'][contains(@id,'installments')]
-CHECKOUT_DROPLIST_OPCAOPARCELAMENTO:  (//option[contains(@value,'1')])[10]
+CHECKOUT_DROPLIST_OPCAOPARCELAMENTO: (//option[contains(@value,'1')])[10]
