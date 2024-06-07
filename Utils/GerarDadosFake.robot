@@ -19,9 +19,9 @@ Gerar Dados Fake Cadastro com Sucesso
     # Insere o CNPJ no campo correspondente
     Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
     Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_FAKE}
-    Click Element    //input[contains(@name,'company[nickname]')]
-    # Aguarda 5 segundos para permitir que a página processe a busca
-    Sleep    5s
+    Click Element    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
+    # Aguarda 10 segundos para permitir que a página processe a busca
+    Sleep    10s
     # Obtém o valor do campo "Razão Social"
     ${razao_social}    Get Value    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}
     # Obtém o valor do campo "Nome Fantasia"
