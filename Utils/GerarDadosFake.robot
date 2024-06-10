@@ -46,7 +46,6 @@ Preencher demais campos do cadastro
     ${LASTNAME_FAKE}    FakerLibrary.Last Name
     ${EMAIL_FAKE}    FakerLibrary.Company Email
     ${WHATSAPP_FAKE}    FakerLibrary.Phone Number
-    ${PASSWORD_FAKE}    FakerLibrary.Password
     # Se o loop terminar e os campos não estiverem preenchidos, falha o teste
     Input Text    ${NOVAEMPRESA_INPUT_APELIDO}    ${FIRSTNAME_FAKE}
     Set Global Variable    ${NOME_FAKE}
@@ -56,8 +55,8 @@ Preencher demais campos do cadastro
     Input Text    ${NOVAEMPRESA_INPUT_FIRSTNAME}    ${FIRSTNAME_FAKE}
     Input Text    ${NOVAEMPRESA_INPUT_LASTNAME}    ${LASTNAME_FAKE}
     Input Text    ${NOVAEMPRESA_INPUT_WHATSAPP}    ${WHATSAPP_FAKE}
-    Input Text    ${NOVAEMPRESA_INPUT_PASSWORD}    ${PASSWORD_FAKE}
-    Input Text    ${NOVAEMPRESA_INPUT_PASSWORDCONFIRMATION}    ${PASSWORD_FAKE}
+    Input Text    ${NOVAEMPRESA_INPUT_PASSWORD}    ${PASSWORD_CADASTRO}
+    Input Text    ${NOVAEMPRESA_INPUT_PASSWORDCONFIRMATION}    ${PASSWORD_CADASTRO}
 
 # Define uma palavra-chave personalizada para esperar até que um elemento seja preenchido
 
