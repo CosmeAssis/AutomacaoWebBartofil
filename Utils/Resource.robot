@@ -6,3 +6,4 @@ Library     FakerLibrary    locale=pt_BR
 Library     Collections
 Library     Process
 Library     BuiltIn
+Library     RequestsLibrary
