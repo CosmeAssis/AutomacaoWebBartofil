@@ -12,12 +12,6 @@ ${LOADING_ELEMENT}      xpath=//*[@id="html-body"]/div[1]/div/img
 
 *** Keywords ***
 Gerar Dados Fake Cadastro com Sucesso
-    # Insere o CNPJ no campo correspondente
-    Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
-    Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_CADASTRO}
-    Click Element    //input[contains(@name,'company[company_email]')]
-    # Espera até que o elemento de carregamento desapareça
-    Wait Until Element Is Not Visible    ${LOADING_ELEMENT}    60s
     ${FIRSTNAME_FAKE}    FakerLibrary.First Name
     ${LASTNAME_FAKE}    FakerLibrary.Last Name
     ${EMAIL_FAKE}    FakerLibrary.Company Email

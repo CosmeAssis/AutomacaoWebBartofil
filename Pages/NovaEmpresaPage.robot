@@ -8,6 +8,12 @@ Variables       ../Locators/NovaEmpresaLocators.yml
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
+    # Insere o CNPJ no campo correspondente
+    Input Text    ${NOVAEMPRESA_INPUT_CNPJ}    ${EMPTY}
+    Press Keys    ${NOVAEMPRESA_INPUT_CNPJ}    ${CNPJ_CADASTRO}
+    Click Element    //input[contains(@name,'company[company_email]')]
+    # Espera até que o elemento de carregamento desapareça
+    Wait Until Element Is Not Visible    ${LOADING_ELEMENT}    60s
     # Utilizando a keyword Gerar Dados Fake Cadastro com Sucesso
     Gerar Dados Fake Cadastro com Sucesso
     # Aguardar exibir o elemento Razao Social
