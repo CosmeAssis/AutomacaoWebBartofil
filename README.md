@@ -3,12 +3,13 @@
 ## ⚙️Execucao dos Testes
 
 ### Criar a pasta Data dentro de Resource
-#### Criar o arquivo LoginInputText.yml dentro da pasta Data com as variaveis:
+#### Criar o arquivo DadosTeste.yml dentro da pasta Data com as variaveis:
 ```
 CNPJ_EMPRESA_APROVADA:
 PASSWORD: 
 CNPJ_EMPRESA_EM_APROVACAO: 
 PASSWORD_INVALIDO:
+TOKEN_API:
 ```
 #### Criar o arquivo NovaEmpresaInputText.yml dentro da pasta Data com as variaveis:
 ```
