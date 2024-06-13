@@ -12,22 +12,25 @@ Dado que estou na página inicial do site www.bartofil.com.br
     Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
 
+Quando o usuario realizar o login com o CNPJ e senha
+    [Arguments]    ${CNPJ}    ${PASSWORD}
+    # Clicar no botao Login no Header do site
+    Click Element    ${HOME_LINK_CUSTOMERLOGIN}
+    # Aguardar esperar aparecer o modal do login
+    Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
+    # Digitar o CNPJ no login
+    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ}
+    # Digitar a senha no login
+    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
+    # Realizar o click no botao Login
+    Click Button    ${HOME_BUTTON_LOGIN}
+    Então o Minha Conta será exibido no header
+
 Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
     # Aguardar esperar aparecer o modal do login
     Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
-
-E preencher login e senha
-    [Arguments]    ${CNPJ}    ${PASSWORD}
-    # Digitar o CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ}
-    # Digitar a senha no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
-
-E clicar em Entrar
-    # Realizar o click no botao Login
-    Click Button    ${HOME_BUTTON_LOGIN}
 
 Então o Minha Conta será exibido no header
     # Aguardar exibir o icone Minha Conta no header
@@ -42,14 +45,7 @@ Então mensagem informando que Login e Senha é inválido é exibida
     # Aguardar exibir a mensagem que o login ou senha é invalido
     Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    10s
 
-E realizo o login com sucesso
-    [Arguments]    ${CNPJ}    ${PASSWORD}
-    Quando clicar em Olá! Entre ou cadastra-se
-    E preencher login e senha    ${CNPJ}    ${PASSWORD}
-    E clicar em Entrar
-    Então o Minha Conta será exibido no header
-
-Quando pesquisar o produto com SKU ${SKU}
+E pesquisar o produto com SKU ${SKU}
     # Digitar    o SKU no produto na busca de produto
     Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
     # Aguardar exibir o produto na busca de produto

@@ -1,4 +1,9 @@
 *** Settings ***
+Documentation       Funcionalidade: Cadastro de cliente Pessoa Jurídica no B2B
+...                 Como um novo cliente Pessoa Jurídica
+...                 Eu quero me cadastrar no site Bartofil
+...                 Para que eu possa acessar e utilizar os serviços oferecidos
+
 Resource            ../Utils/OpenBrowser.robot
 Resource            ../Pages/HomePage.robot
 Resource            ../Pages/CriarContaPage.robot
