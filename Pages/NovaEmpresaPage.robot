@@ -13,7 +13,7 @@ ${MAX_TENTATIVAS}       10
 
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
-    Criar Sessão
+    Criar Sessão API B2B Staging
     Executar Consulta e Deleção de Company    ${CNPJ_CADASTRO}
 
     FOR    ${i}    IN RANGE    ${MAX_TENTATIVAS}
