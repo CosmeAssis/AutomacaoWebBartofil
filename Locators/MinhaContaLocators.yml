@@ -1,0 +1,2 @@
+# BASE
+MINHACONTA_PAGETITLE_MINHACONTA: //span[@class='base'][contains(.,'Minha Conta')]

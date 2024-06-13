@@ -1,5 +1,6 @@
 *** Settings ***
 Resource        ../Utils/OpenBrowser.robot
+Resource        ../Pages/MinhaContaPage.robot
 Variables       ../Locators/HomeLocators.yml
 Variables       ../Data/DadosTeste.yml
 
@@ -57,3 +58,8 @@ E pesquisar o produto com SKU ${SKU}
 E clicar em Cadastrar
     # Clicar no botao Cadastrar
     Click Element    ${HOME_BUTTON_CADASTRAR}
+
+E o usuário clica em "Minha Conta"
+    # Clicar no elemento minha Conta
+    Click Element    ${HOME_HEADER_MINHACONTA}
+    Aguardar exibir o titulo da pagina Minha Conta
