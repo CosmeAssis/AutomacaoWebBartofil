@@ -43,8 +43,9 @@ Então mensagem informando que Login e Senha é inválido é exibida
     Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    10s
 
 E realizo o login com sucesso
+    [Arguments]    ${CNPJ}    ${PASSWORD}
     Quando clicar em Olá! Entre ou cadastra-se
-    E preencher login e senha    ${CNPJ_EMPRESA_APROVADA}    ${PASSWORD_VALIDO}
+    E preencher login e senha    ${CNPJ}    ${PASSWORD}
     E clicar em Entrar
     Então o Minha Conta será exibido no header
 
