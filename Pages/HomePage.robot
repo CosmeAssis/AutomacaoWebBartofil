@@ -19,8 +19,9 @@ Quando clicar em Olá! Entre ou cadastra-se
     Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
 
 E preencher login e senha
+    [Arguments]    ${CNPJ}    ${PASSWORD}
     # Digitar o CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
+    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ}
     # Digitar a senha no login
     Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
 
@@ -33,21 +34,9 @@ Então o Minha Conta será exibido no header
     Sleep    10s
     Wait Until Element Is Visible    ${HOME_HEADER_MINHACONTA}
 
-E preencher login e senha de uma conta em aprovação
-    # Digitar CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_EM_APROVACAO}
-    # Digitar senha no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
-
 Então mensagem que a conta ainda não foi aprovada é exibida
     # Aguardar exibir a mensagem que a conta ainda nao foi aprovada
     Wait Until Element Is Visible    ${HOME_MESSAGE_CONTANAOAPROVADA}    10s
-
-E preencher com uma senha incorreta
-    # Digitar CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
-    # Digitar senha incorreta no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD_INVALIDO}
 
 Então mensagem informando que Login e Senha é inválido é exibida
     # Aguardar exibir a mensagem que o login ou senha é invalido
@@ -55,7 +44,7 @@ Então mensagem informando que Login e Senha é inválido é exibida
 
 E realizo o login com sucesso
     Quando clicar em Olá! Entre ou cadastra-se
-    E preencher login e senha
+    E preencher login e senha    ${CNPJ_EMPRESA_APROVADA}    ${PASSWORD_VALIDO}
     E clicar em Entrar
     Então o Minha Conta será exibido no header
 
