@@ -76,3 +76,17 @@ Cenário 4: Venda de Produto nao configuravel com metodo de pagamento Cartao de 
     E digitar as informacoes do cartao
     E clicar em Finalizar Compra
     Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
+
+Cenário 5: Venda de Produto nao configuravel com metodo de pagamento Boleto a Prazo
+    [Tags]    boletoaprazo
+    Dado que estou na página inicial do site www.bartofil.com.br
+    Quando o usuario realizar o login com o CNPJ e senha
+    ...    ${CNPJ_VENDA_BOLETOAPRAZO}
+    ...    ${PASSWORD_CNPJ_PONTOS_PARCEIRO}
+    E pesquisar o produto com SKU 108384
+    E validar tela de PDP
+    E adicionar o produto no carrinho
+    E clicar para nao utilizar o programa de ponto do parceiro
+    E selecionar o metodo de pagamento como Boleto a Prazo
+    E clicar em Finalizar Compra com Boleto a Prazo
+    Entao mensagem Pronto! Já recebemos o seu pedido. é exibida
