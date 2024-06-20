@@ -12,11 +12,29 @@ ${BASE_URL}     https://mcstaging.bartofil.com.br/
 Criar Sessão API B2B Staging
     Create Session    apibartofilstaging    ${BASE_URL}
 
-Consultar Customers com Parâmetros
-    [Arguments]    ${field}    ${value}    ${headers}
+Consultar ID do Parceiro pelo CNPJ
+    [Arguments]    ${field}    ${value}    ${token}
+    ${params}    Create Dictionary    searchCriteria[filter_groups][0][filters][0][field]=${field}    searchCriteria[filter_groups][0][filters][0][value]=${value}
+    ${response}    Get On Session    
+    ...    apibartofilstaging    
+    ...    /rest/V1/parceiro/list
+    ...    headers=${token}    
+    ...    params=${params}
+    Should Be Equal As Strings    ${response.status_code}    200
+    ${json_response}    Set Variable    ${response.json()}
+    Log    Response JSON: ${json_response}
+    
+    ${items}    Get From Dictionary    ${json_response}    items
+    ${first_item}    Set Variable    ${items}[0]
+    ${parceiro_id}    Get From Dictionary    ${first_item}    parceiro_id
+    Log    Parceiro ID encontrado: ${parceiro_id}
+    RETURN    ${parceiro_id}
+
+Consultar Company ID pelop CNPJ
+    [Arguments]    ${taxvat}    ${value}    ${headers}
     # Cria o dicionário de parâmetros com os critérios de busca
     ${params}=    Create Dictionary
-    ...    searchCriteria[filter_groups][0][filters][0][field]=${field}
+    ...    searchCriteria[filter_groups][0][filters][0][taxvat]=${taxvat}
     ...    searchCriteria[filter_groups][0][filters][0][value]=${value}
     # Faz a requisição GET na sessão configurada
     ${response}=    GET On Session
@@ -50,14 +68,24 @@ Deletar Company pelo Company ID
     Log    ${response.status_code}
     Log    ${response.content}
 
-Executar Consulta e Deleção de Company
+Executar Consulta e Delete da Company
     [Arguments]    ${cnpj}
     ${headers}=    Create Dictionary    Authorization=Bearer ${TOKEN_API}
     # Consulta o customer com o CNPJ fornecido
-    ${company_id}=    Consultar Customers com Parâmetros    taxvat    ${cnpj}    ${headers}
+    ${company_id}=    Consultar Company ID pelop CNPJ    taxvat    ${cnpj}    ${headers}
     # Verifica se o company_id é None, caso seja, loga a mensagem e finaliza. Caso contrário, deleta a company.
     IF    '$company_id' == 'None'    # Sintaxe ajustada aqui
         Log    Nenhuma empresa encontrada para o CNPJ: ${cnpj}
     ELSE
         Deletar Company pelo Company ID    ${company_id}    ${headers}
     END
+
+Executar Consulta e Delete do Parceiro
+    [Arguments]    ${cnpj}
+     ${headers}    Create Dictionary    Authorization=Bearer ${TOKEN_API}
+     ${parceiro_id}      Consultar ID do Parceiro pelo CNPJ    cnpj     ${cnpj}    ${headers}
+
+*** Test Cases ***
+Testar Consulta
+    Criar Sessão API B2B Staging
+    Executar Consulta e Delete do Parceiro  ${CNPJ_PARCEIRO_AUTOMACAO}
