@@ -1,6 +1,7 @@
 *** Settings ***
 Resource            ../Utils/OpenBrowser.robot
 Resource            ../Pages/HomePage.robot
+Resource            ../Pages/CadastrarParceiroPage.robot
 
 ##Execução antes de iniciar o teste
 Test Setup          Abrir o navegador
@@ -12,7 +13,9 @@ Test Teardown       Fechar o navegador
 Cenário 1: Realizar cadastro com sucesso no programa do Parceiro Bartofil
     [Tags]    loginsucesso
     Dado que estou na página inicial do site www.bartofil.com.br
-    Quando o usuario realizar o login com o CNPJ e senha    ${CNPJ_PARCEIRO_AUTOMACAO}    ${PASSWORD_PARCEIRO_AUTOMACAO}
+    Quando o usuario realizar o login com o CNPJ e senha
+    ...    ${CNPJ_PARCEIRO_AUTOMACAO}
+    ...    ${PASSWORD_PARCEIRO_AUTOMACAO}
     E o usuário clica em "Minha Conta"
     E o usuário clica em "Quero me cadastrar" em Parceiro Bartofil
     E o usuário preenche os dados do formulário de cadastro do parceiro

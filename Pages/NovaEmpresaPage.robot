@@ -5,6 +5,7 @@ Resource        ../Utils/GerarDadosFake.robot
 Resource        ../Utils/DeletarCompanyCustomer.robot
 Variables       ../Data/NovaEmpresaInputText.yml
 Variables       ../Locators/NovaEmpresaLocators.yml
+Variables       ../Locators/NovaEmpresaLocators.yml
 
 
 *** Variables ***

@@ -3,6 +3,3 @@ MINHACONTA_PAGETITLE_MINHACONTA: //span[@class='base'][contains(.,'Minha Conta')
 
 #LABEL
 MINHACONTA_LABEL_QUEROMECADASTRAR: //a[contains(.,'Quero me Cadastrar')]
-
-#TITLE
-MINHACONTA_TITLE_FORMULARIOCADPARCEIRO: //h1[@class='title'][contains(.,'FORMULÁRIO DE CADASTRO PARCEIRO BARTOFIL')]

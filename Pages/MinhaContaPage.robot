@@ -1,6 +1,7 @@
 *** Settings ***
 Resource        ../Utils/OpenBrowser.robot
 Variables       ../Locators/MinhaContaLocators.yml
+Variables       ../Locators/CadastrarParceiroLocators.yml
 
 
 *** Keywords ***
