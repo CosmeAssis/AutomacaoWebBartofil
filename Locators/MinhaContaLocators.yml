@@ -1,0 +1,5 @@
+# BASE
+MINHACONTA_PAGETITLE_MINHACONTA: //span[@class='base'][contains(.,'Minha Conta')]
+
+#LABEL
+MINHACONTA_LABEL_QUEROMECADASTRAR: //a[@href='https://mcstaging.bartofil.com.br/parceiro/account/register/'][contains(.,'Quero me Cadastrar')]

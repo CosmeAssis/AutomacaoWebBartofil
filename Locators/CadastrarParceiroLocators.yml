@@ -1,0 +1,12 @@
+#TITLE
+MINHACONTA_TITLE_FORMULARIOCADPARCEIRO: //h1[@class='title'][contains(.,'FORMULÁRIO DE CADASTRO PARCEIRO BARTOFIL')]
+
+#INPUT
+MINHACONTA_INPUT_NUMERODEADMPARCEIRO: //input[@name='phone']
+MINHACONTA_INPUT_WHATSPARCEIRO: //input[contains(@name,'whatsapp')]
+MINHACONTA_INPUT_NOMEDALOJA: //input[contains(@name,'name_store')]
+MINHACONTA_INPUT_URLPARCEIRO: //input[contains(@name,'site')]
+MINHACONTA_INPUT_RCA: //input[contains(@name,'id_rca')]
+
+#BUTTON
+CADASTRARPARCEIRO_BUTTON_ENVIARPANALISE: //button[@class='btn-action primary'][contains(.,'ENVIAR SOLICITAÇÃO PARA ANÁLISE')]

@@ -1,5 +1,6 @@
 *** Settings ***
 Resource        ../Utils/OpenBrowser.robot
+Resource        ../Pages/MinhaContaPage.robot
 Variables       ../Locators/HomeLocators.yml
 Variables       ../Data/DadosTeste.yml
 
@@ -12,54 +13,40 @@ Dado que estou na página inicial do site www.bartofil.com.br
     Wait Until Element Is Visible    ${HOME_BUTTON_PERMITIRCOOKIES}    10s
     Click Button    ${HOME_BUTTON_PERMITIRCOOKIES}
 
+Quando o usuario realizar o login com o CNPJ e senha
+    [Arguments]    ${CNPJ}    ${PASSWORD}
+    # Clicar no botao Login no Header do site
+    Click Element    ${HOME_LINK_CUSTOMERLOGIN}
+    # Aguardar esperar aparecer o modal do login
+    Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
+    # Digitar o CNPJ no login
+    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ}
+    # Digitar a senha no login
+    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
+    # Realizar o click no botao Login
+    Click Button    ${HOME_BUTTON_LOGIN}
+
 Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
     # Aguardar esperar aparecer o modal do login
     Wait Until Element Is Visible    ${HOME_MODALTITLE_JASOUCLIENTE}    10s
 
-E preencher login e senha
-    # Digitar o CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
-    # Digitar a senha no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
-
-E clicar em Entrar
-    # Realizar o click no botao Login
-    Click Button    ${HOME_BUTTON_LOGIN}
-
 Então o Minha Conta será exibido no header
     # Aguardar exibir o icone Minha Conta no header
     Sleep    10s
     Wait Until Element Is Visible    ${HOME_HEADER_MINHACONTA}
 
-E preencher login e senha de uma conta em aprovação
-    # Digitar CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_EM_APROVACAO}
-    # Digitar senha no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
-
 Então mensagem que a conta ainda não foi aprovada é exibida
     # Aguardar exibir a mensagem que a conta ainda nao foi aprovada
     Wait Until Element Is Visible    ${HOME_MESSAGE_CONTANAOAPROVADA}    10s
-
-E preencher com uma senha incorreta
-    # Digitar CPF no login
-    Input Text    ${HOME_INPUT_USERNAME}    ${CNPJ_EMPRESA_APROVADA}
-    # Digitar senha incorreta no login
-    Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD_INVALIDO}
 
 Então mensagem informando que Login e Senha é inválido é exibida
     # Aguardar exibir a mensagem que o login ou senha é invalido
     Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    10s
 
-E realizo o login com sucesso
-    Quando clicar em Olá! Entre ou cadastra-se
-    E preencher login e senha
-    E clicar em Entrar
+E pesquisar o produto com SKU ${SKU}
     Então o Minha Conta será exibido no header
-
-Quando pesquisar o produto com SKU ${SKU}
     # Digitar    o SKU no produto na busca de produto
     Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
     # Aguardar exibir o produto na busca de produto
@@ -71,3 +58,9 @@ Quando pesquisar o produto com SKU ${SKU}
 E clicar em Cadastrar
     # Clicar no botao Cadastrar
     Click Element    ${HOME_BUTTON_CADASTRAR}
+
+E o usuário clica em "Minha Conta"
+    Então o Minha Conta será exibido no header
+    # Clicar no elemento minha Conta
+    Click Element    ${HOME_HEADER_MINHACONTA}
+    Aguardar exibir o titulo da pagina Minha Conta

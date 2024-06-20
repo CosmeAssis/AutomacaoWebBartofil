@@ -16,3 +16,7 @@ NOVAEMPRESA_CHECKBOX_LGPD: //input[contains(@id,'checkbox-lgpd')]
 
 #BUTTON
 NOVAEMPRESA_BUTTON_CRIARCONTA: //button[@type='submit'][contains(@id,'account')][contains(.,'Criar Conta')]
+
+#LOADING
+# Define o localizador do elemento de carregamento (loading) usando XPath
+LOADING_ELEMENT: xpath=//*[@id="html-body"]/div[1]/div/img

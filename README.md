@@ -6,10 +6,12 @@
 #### Criar o arquivo DadosTeste.yml dentro da pasta Data com as variaveis:
 ```
 CNPJ_EMPRESA_APROVADA:
-PASSWORD: 
+PASSWORD_VALIDO:
 CNPJ_EMPRESA_EM_APROVACAO: 
 PASSWORD_INVALIDO:
-TOKEN_API:
+TOKEN_API: 
+CNPJ_PARCEIRO:
+PASSWORD_PARCEIRO: 
 ```
 #### Criar o arquivo NovaEmpresaInputText.yml dentro da pasta Data com as variaveis:
 ```

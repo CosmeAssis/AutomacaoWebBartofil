@@ -14,19 +14,19 @@ CHECKOUT_RADIOBUTTON_PIX: getnet_paymentmagento_pix
 CHECKOUT_RADIOBUTTON_CARTAOCREDITO: //input[contains(@value,'getnet_paymentmagento_cc')]
 
 # ELEMENTOS PRICE
-CHECKOUT_PRICE_VALORTOTALPEDIDO: (//span[contains(@class,'price')])[11]
+CHECKOUT_PRICE_VALORTOTALPEDIDO: (//span[contains(@class,'price')])[12]
 
 # ELEMENTOS CHOICE TITLE
 CHECKOUT_CHOICEPAYMENT_BOLETOANTECIPADO: //div[@class='payment-method-title field choice'][contains(.,'Boleto Antecipado - 3% de desconto')]
 
 # ELEMENTOS ACTIONS TOOLBAR
-CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO: (//div[contains(@class,'actions-toolbar')])[11]
+CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO: (//div[@class='actions-toolbar'][contains(.,'Finalizar Compra')])[3]
 
 # ELEMENTOS DATA_BIND
 CHECKOUT_DATABIND_REMOVERPONTOSPARCEIRO: "//input[contains(@data-bind,'click: removeRewardPoints')]"
 
 # ELEMENTOS MESSAGE
-CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO: //div[contains(@class,'message message-success success')]
+CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO: //div[@data-ui-id='checkout-cart-validationmessages-message-success'][contains(.,'Você removeu os pontos Parceiro Bartofil deste pedido.')]
 
 # ELEMENTOS INPUT
 CHECKOUT_INPUT_NUMEROCARTAODECREDITO: //input[contains(@data-container,'cc-cc-number')]

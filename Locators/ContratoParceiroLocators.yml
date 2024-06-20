@@ -1,0 +1,2 @@
+#MESSAGE
+CONTRATO_MESSAGE_ENVIADOPANALISE: //div[@class='message-success success message'][contains(.,'Solicitação de cadastro enviada para análise com sucesso!')]
