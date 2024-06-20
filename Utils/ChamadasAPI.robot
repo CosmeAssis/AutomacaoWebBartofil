@@ -12,32 +12,43 @@ ${BASE_URL}     https://mcstaging.bartofil.com.br/
 Criar Sessão API B2B Staging
     Create Session    apibartofilstaging    ${BASE_URL}
 
-Consultar Company ID pelop CNPJ
+Consultar Company ID pelo CNPJ
     [Arguments]    ${field}    ${value}    ${headers}
-    # Cria o dicionário de parâmetros com os critérios de busca
+
+    # Criando o dicionário de parâmetros para a requisição GET
     ${params}=    Create Dictionary
     ...    searchCriteria[filter_groups][0][filters][0][field]=${field}
     ...    searchCriteria[filter_groups][0][filters][0][value]=${value}
-    # Faz a requisição GET na sessão configurada
+
+    # Fazendo a requisição GET para a API
     ${response}=    GET On Session
-    ...    apibartofilstaging
-    ...    rest/all/V1/customers/search
-    ...    headers=${headers}
-    ...    params=${params}
-    # Loga o conteúdo da resposta
+    ...    apibartofilstaging    # Nome da sessão ou endpoint da API
+    ...    rest/all/V1/customers/search    # Caminho para o endpoint de pesquisa de clientes
+    ...    headers=${headers}    # Passando os cabeçalhos
+    ...    params=${params}    # Passando os parâmetros
+
+    # Logando o conteúdo da resposta (opcional, para debug)
     Log    ${response.content}
-    # Converte a resposta JSON de string para dicionário
-    ${response_json}=    Evaluate    json.loads('${response.content}')    json
 
-    # Verifica se há itens na resposta
+    # Convertendo a resposta de JSON para um dicionário Python
+    ${response_json}=    Evaluate    json.loads($response.content)    json
+    # Obtendo a lista de items da resposta
     ${items}=    Get From Dictionary    ${response_json}    items
-    IF    '$items' == 'None'    RETURN    None
+    # Obtendo o tamanho da lista de items
+    ${items_count}=    Get Length    ${items}
 
-    # Obtém o company_id do primeiro item, se disponível
-    ${first_item}=    Get From List    ${items}    0
+    # Verificando se a lista de items está vazia
+    IF    '${items_count}' == '0'    RETURN    None
+
+    # Pegando o primeiro item da lista
+    ${first_item}=    Set Variable    ${items}[0]
+    # Obtendo os extension_attributes do primeiro item
     ${extension_attributes}=    Get From Dictionary    ${first_item}    extension_attributes
+    # Obtendo os company_attributes dos extension_attributes
     ${company_attributes}=    Get From Dictionary    ${extension_attributes}    company_attributes
+    # Obtendo o company_id dos company_attributes
     ${company_id}=    Get From Dictionary    ${company_attributes}    company_id
+    # Retornando o company_id encontrado
     RETURN    ${company_id}
 
 Deletar Company pelo Company ID
@@ -53,16 +64,21 @@ Deletar Company pelo Company ID
 Executar Consulta e Delete da Company
     [Arguments]    ${cnpj}
     ${headers}=    Create Dictionary    Authorization=Bearer ${TOKEN_API}
+    
     # Consulta o customer com o CNPJ fornecido
-    ${company_id}=    Consultar Company ID pelop CNPJ    taxvat    ${cnpj}    ${headers}
-    # Verifica se o company_id é None, caso seja, loga a mensagem e finaliza. Caso contrário, deleta a company.
-    IF    '$company_id' == 'None'    # Sintaxe ajustada aqui
-        Log    Nenhuma empresa encontrada para o CNPJ: ${cnpj}
-    ELSE
-        Deletar Company pelo Company ID    ${company_id}    ${headers}
-    END
+    ${company_id}=    Consultar Company ID pelo CNPJ    taxvat    ${cnpj}    ${headers}
+    
+    # Verifica se o company_id não é None usando Run Keyword If
+    Run Keyword If    '${company_id}' != 'None'
+    ...    Deletar Company pelo Company ID    ${company_id}    ${headers}
+    Log    Empresa deletada com sucesso
+    
+    # Se o company_id for None, registra um log apropriado
+    Run Keyword If    '${company_id}' == 'None'
+    ...    Log    Nenhuma empresa encontrada para o CNPJ: ${cnpj}
 
 ##################### AJUSTAR APOS CRIACAO DA API PARA DELETAR PELO CRISTIAN ##############################
+
 Consultar ID do Parceiro pelo CNPJ
     [Arguments]    ${field}    ${value}    ${headers}
     ${params}=    Create Dictionary
