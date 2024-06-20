@@ -2,7 +2,7 @@
 Resource        ../Utils/Resource.robot
 Resource        ../Utils/OpenBrowser.robot
 Resource        ../Utils/GerarDadosFake.robot
-Resource        ../Utils/DeletarCompanyCustomer.robot
+Resource        ../Utils/ChamadasAPI.robot
 Variables       ../Data/NovaEmpresaInputText.yml
 Variables       ../Locators/NovaEmpresaLocators.yml
 Variables       ../Locators/NovaEmpresaLocators.yml
@@ -15,7 +15,7 @@ ${MAX_TENTATIVAS}       10
 *** Keywords ***
 E preencher as informacoes de cadastro com sucesso
     Criar Sessão API B2B Staging
-    Executar Consulta e Deleção de Company    ${CNPJ_CADASTRO}
+    Executar Consulta e Delete da Company    ${CNPJ_CADASTRO}
 
     FOR    ${i}    IN RANGE    ${MAX_TENTATIVAS}
         # Insere o CNPJ no campo correspondente
