@@ -25,7 +25,6 @@ Quando o usuario realizar o login com o CNPJ e senha
     Input Password    ${HOME_INPUT_PASSWORD}    ${PASSWORD}
     # Realizar o click no botao Login
     Click Button    ${HOME_BUTTON_LOGIN}
-    Então o Minha Conta será exibido no header
 
 Quando clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
@@ -47,6 +46,7 @@ Então mensagem informando que Login e Senha é inválido é exibida
     Wait Until Element Is Visible    ${HOME_MESSAGE_LOGINSENHAINVALIDO}    10s
 
 E pesquisar o produto com SKU ${SKU}
+    Então o Minha Conta será exibido no header
     # Digitar    o SKU no produto na busca de produto
     Input Text    ${HOME_INPUT_BUSCAPRODUTO}    ${SKU}
     # Aguardar exibir o produto na busca de produto
@@ -60,6 +60,7 @@ E clicar em Cadastrar
     Click Element    ${HOME_BUTTON_CADASTRAR}
 
 E o usuário clica em "Minha Conta"
+    Então o Minha Conta será exibido no header
     # Clicar no elemento minha Conta
     Click Element    ${HOME_HEADER_MINHACONTA}
     Aguardar exibir o titulo da pagina Minha Conta

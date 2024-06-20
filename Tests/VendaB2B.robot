@@ -18,7 +18,9 @@ Cenário 1: Venda de Produto nao configuravel com metodo de pagamento Boleto Ant
     ...    Esta sendo validado o desconto de 3% com sucesso e a conclusao do pedido para pagamento.
     [Tags]    boletoantecipado
     Dado que estou na página inicial do site www.bartofil.com.br
-    Quando o usuario realizar o login com o CNPJ e senha    ${CNPJ_EMPRESA_APROVADA}    ${PASSWORD_VALIDO}
+    Quando o usuario realizar o login com o CNPJ e senha
+    ...    ${CNPJ_VENDA_PONTOS_PARCEIRO}
+    ...    ${PASSWORD_CNPJ_PONTOS_PARCEIRO}
     E pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
@@ -34,7 +36,7 @@ Cenário 2: Venda de Produto nao configuravel com metodo de pagamento Cartao de 
     Dado que estou na página inicial do site www.bartofil.com.br
     Quando o usuario realizar o login com o CNPJ e senha
     ...    ${CNPJ_VENDA_PONTOS_PARCEIRO}
-    ...    ${PASSWORD_PARCEIRO_AUTOMACAO}
+    ...    ${PASSWORD_CNPJ_PONTOS_PARCEIRO}
     E pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
@@ -49,7 +51,9 @@ Cenário 3: Venda de Produto nao configuravel com metodo de pagamento Pix
     ...    Porque esta retornando erro no servidor da getnet devido a falta da instituicao finaceira nao esta configurada
     [Tags]    pedidometodopix
     Dado que estou na página inicial do site www.bartofil.com.br
-    Quando o usuario realizar o login com o CNPJ e senha    ${CNPJ_EMPRESA_APROVADA}    ${PASSWORD_VALIDO}
+    Quando o usuario realizar o login com o CNPJ e senha    
+    ...    ${CNPJ_VENDA_PONTOS_PARCEIRO}
+    ...    ${PASSWORD_CNPJ_PONTOS_PARCEIRO}
     E pesquisar o produto com SKU 108384
     E validar tela de PDP
     E adicionar o produto no carrinho
