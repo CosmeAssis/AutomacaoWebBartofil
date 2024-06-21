@@ -7,6 +7,8 @@ CHECKOUT_BUTTON_FINALIZARCOMPRA: (//button[contains(@class,'action primary check
 CHECKOUT_BUTTON_NEXTSTEP: //button[@class='action primary checkout next-step-trigger']
 CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETO_ANTECIPADO: (//button[contains(@class,'action primary checkout')])[3]
 CHECKOUT_BUTTON_EXCLUIRSELECIONADOS: //button[contains(@value,'delete_items')]
+CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETOPRAZO: (//span[contains(.,'Finalizar Compra')])[5]
+CHECKOUT_INPUT_BOLETOAVISTA: //input[contains(@value,'boletoavista')]
 
 # ELEMENTOS RADIOBUTTON
 CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO: //input[contains(@value,'getnet_paymentmagento_boleto')]
@@ -32,6 +34,8 @@ CHECKOUT_MESSAGE_PONTOSPARCEIROREMOVIDO: //div[@data-ui-id='checkout-cart-valida
 CHECKOUT_INPUT_NUMEROCARTAODECREDITO: //input[contains(@data-container,'cc-cc-number')]
 CHECKOUT_INPUT_CVV: //input[contains(@class,'input-text cvv')]
 CHECKOUT_INPUT_NOMETITULARCARTAO: //input[@type='text'][contains(@id,'name')]
+CHECKOUT_INPUT_BOLETOAPRAZO: //input[contains(@value,'boletoaprazo')]
+CHECKOUT_INPUT_PAGAMENTOAVISTA: //input[contains(@value,'boletoavista')]
 
 # ELEMENTOS DROPLIST
 CHECKOUT_DROPLIST_MESVENCIMENTO: //select[@name='payment[cc_exp_month]'][contains(@id,'expiration')]
