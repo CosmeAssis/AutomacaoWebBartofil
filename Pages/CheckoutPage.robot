@@ -34,7 +34,7 @@ E verificar o desconto de 3% do Boleto Antecipado
     # Clicar no metodo de Pagamento Boleto Antecipado
     Click Button    ${CHECKOUT_RADIOBUTTON_BOLETOANTECIPADO}
     Scroll Element Into View    ${CHECKOUT_ACTIONS_TOOLBAR_BOLETOANTECIPADO}
-    Sleep    3
+    Sleep    5
     # Verificar que o calculo de 3% foi aplicado com sucesso
     Page Should Contain    ${VALOR_PEDIDO_CALCULADO}
 
@@ -129,3 +129,21 @@ Limpar Carrinho a partir do checkout
     Click Element    //span[contains(.,'Selecionar tudo')]
     # Clicar no botao excluir selecionados
     Click Element    ${CHECKOUT_BUTTON_EXCLUIRSELECIONADOS}
+
+E selecionar o metodo de pagamento como Boleto a Prazo
+    Sleep    5s
+    # Aguardar exibir a Label Resumo do Pedido
+    Wait Until Element Is Visible    ${CHECKOUT_LABEL_RESUMODOPEDIDO}    5s
+    # Fazer o scroll na pagina ate o elemento Boleto a Prazo
+    Scroll Element Into View    ${CHECKOUT_INPUT_BOLETOAPRAZO}
+    # Clicar no elemento Boleto a Prazo
+    Click Element    ${CHECKOUT_INPUT_BOLETOAPRAZO}
+
+E clicar em Finalizar Compra com Boleto a Prazo
+    Scroll Element Into View    //input[@value='boletoavista']
+    Sleep    5s
+    # Clicar no elemento Pagamento a Vista
+    Click Button    //input[@value='boletoavista']
+    Sleep    5s
+    # Clicar no botao Finalizar Compra no Boleto a Prazo
+    Click Element    ${CHECKOUT_BUTTON_FINALIZARCOMPRA_BOLETOPRAZO}

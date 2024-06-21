@@ -21,8 +21,8 @@ E validar tela de PDP
 E adicionar o produto no carrinho
     # Realizar o scroll na pagina ate exibir a label com a desc do produto na PDP
     Scroll Element Into View    ${PDP_LABEL_DESCPRODUTO}
-    # Clicar na quantidade de produto 4 vezes na PDP
-    FOR    ${index}    IN RANGE    4
+    # Clicar na quantidade de produto 6 vezes na PDP
+    FOR    ${index}    IN RANGE    5
         Click Element    ${PDP_BUTTON_ADICIONAR_QUANTIDADE_PRODUTO}
     END
     # Clicar no botao Adicionar ao Carrinho na PDP
