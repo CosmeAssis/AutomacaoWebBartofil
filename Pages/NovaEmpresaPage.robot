@@ -13,7 +13,7 @@ ${MAX_TENTATIVAS}       10
 
 
 *** Keywords ***
-E preencher as informacoes de cadastro com sucesso
+Preencher as informacoes de cadastro com sucesso
     Criar Sessão API B2B Staging
     Executar Consulta e Delete da Company    ${CNPJ_CADASTRO}
 
@@ -45,7 +45,7 @@ E preencher as informacoes de cadastro com sucesso
     # Aguardar exibir o elemento Razao Social
     Wait Until Element Is Visible    ${NOVAEMPRESA_INPUT_RAZAOSOCIAL}    5s
 
-E clicar em Aceito receber informações de acordo com a Politica de Segurança
+Clicar em Aceito receber informações de acordo com a Politica de Segurança
     # Clicar no Checkbox do LGPD
     Click Element    ${NOVAEMPRESA_CHECKBOX_LGPD}
 
