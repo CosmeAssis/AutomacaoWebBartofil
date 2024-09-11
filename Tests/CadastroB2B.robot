@@ -8,6 +8,7 @@ Resource            ../Utils/OpenBrowser.robot
 Resource            ../Pages/HomePage.robot
 Resource            ../Pages/CriarContaPage.robot
 Resource            ../Pages/NovaEmpresaPage.robot
+Resource            ../Pages/CriarContaPage.robot
 
 ##Execução antes de iniciar o teste
 Test Setup          Abrir o navegador
