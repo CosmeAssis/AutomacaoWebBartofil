@@ -1,6 +1,8 @@
 *** Settings ***
 Resource        ../Utils/OpenBrowser.robot
 Resource        ../Pages/MinhaContaPage.robot
+Resource        ../Pages/CriarContaPage.robot
+Resource        ../Pages/NovaEmpresaPage.robot
 Variables       ../Locators/HomeLocators.yml
 Variables       ../Data/DadosTeste.yml
 
@@ -26,7 +28,7 @@ Quando o usuario realizar o login com o CNPJ e senha
     # Realizar o click no botao Login
     Click Button    ${HOME_BUTTON_LOGIN}
 
-Quando clicar em Olá! Entre ou cadastra-se
+ Clicar em Olá! Entre ou cadastra-se
     # Clicar no botao Login no Header do site
     Click Element    ${HOME_LINK_CUSTOMERLOGIN}
     # Aguardar esperar aparecer o modal do login
@@ -55,7 +57,7 @@ E pesquisar o produto com SKU ${SKU}
     # Clicar no produto apresentado na busca de produto
     Click Element    ${HOME_GRID_RESULTADOPRODUTO}
 
-E clicar em Cadastrar
+Clicar em Cadastrar
     # Clicar no botao Cadastrar
     Click Element    ${HOME_BUTTON_CADASTRAR}
 
@@ -64,3 +66,11 @@ E o usuário clica em "Minha Conta"
     # Clicar no elemento minha Conta
     Click Element    ${HOME_HEADER_MINHACONTA}
     Aguardar exibir o titulo da pagina Minha Conta
+
+Quando preencher as informacoes do cadastro
+    Clicar em Olá! Entre ou cadastra-se
+    Clicar em Cadastrar
+    Verificar que está selecionado a opcao Pessoa Juridica
+    Clicar em Proxima Etapa
+    Preencher as informacoes de cadastro com sucesso
+    Clicar em Aceito receber informações de acordo com a Politica de Segurança
